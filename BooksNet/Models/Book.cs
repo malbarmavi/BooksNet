@@ -7,10 +7,10 @@ namespace BooksNet.Models
 {
   public class Book
   {
-    [Key, Column(Order = 0)]
+    [Key]
     public int Id { get; set; }
-
-    [Key, Column(Order = 1)]
+    
+    [Required]
     public string Title { get; set; }
 
     [Required]
@@ -33,5 +33,7 @@ namespace BooksNet.Models
     public string Notes { get; set; }
 
     public List<Author> Authors { get; set; }
+
+    public string FileName { get; set; } 
   }
 }
