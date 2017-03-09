@@ -1,0 +1,21 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace BooksNet.Models
+{
+  public class Publisher
+  {
+    [Key]
+    public int Id { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public string Address { get; set; }
+
+    public List<Book> Books { get; set; }
+
+    public List<Author> Authors { get; set; }
+  }
+}
