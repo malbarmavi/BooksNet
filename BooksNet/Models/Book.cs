@@ -15,9 +15,10 @@ namespace BooksNet.Models
     [Required]
     public AgeSet Age { get; set; }
 
-    [Required]
+    
     public Category MainCategory { get; set; }
 
+    [Required]
     public int MainCategoryId { get; set; }
 
     [Required]
