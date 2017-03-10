@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BooksNet.Models
 {
@@ -9,7 +8,7 @@ namespace BooksNet.Models
   {
     [Key]
     public int Id { get; set; }
-    
+
     [Required]
     public string Title { get; set; }
 
@@ -18,11 +17,11 @@ namespace BooksNet.Models
 
     [Required]
     public Category MainCategory { get; set; }
-    
+
     public int MainCategoryId { get; set; }
 
     [Required]
-    public List<Category> Subcategories { get; set;}
+    public List<Category> Subcategories { get; set; }
 
     [Required]
     public int Print { get; set; }
@@ -32,8 +31,14 @@ namespace BooksNet.Models
     [MaxLength(250)]
     public string Notes { get; set; }
 
+    [Required]
     public List<Author> Authors { get; set; }
 
-    public string FileName { get; set; } 
+    public Publisher Publisher { get; set; }
+
+    [Required]
+    public int PublisherId { get; set; }
+
+    public string FileName { get; set; }
   }
 }
