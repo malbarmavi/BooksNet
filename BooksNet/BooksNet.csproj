@@ -182,6 +182,10 @@
     <Compile Include="Migrations\201703120545225_AddMainModels.Designer.cs">
       <DependentUpon>201703120545225_AddMainModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703121554014_AddTimestampToModels.cs" />
+    <Compile Include="Migrations\201703121554014_AddTimestampToModels.Designer.cs">
+      <DependentUpon>201703121554014_AddTimestampToModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgeSet.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703120545225_AddMainModels.resx">
       <DependentUpon>201703120545225_AddMainModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121554014_AddTimestampToModels.resx">
+      <DependentUpon>201703121554014_AddTimestampToModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
