@@ -9,9 +9,11 @@ namespace BooksNet.Models
     public int Id { get; set; }
 
     [Required]
+    [Display(Name = "First Name")]
     public string Name { get; set; }
 
     [Required]
+    [Display(Name = "Last Name")]
     public string LastName { get; set; }
 
     [Required]
@@ -19,8 +21,12 @@ namespace BooksNet.Models
 
     public string Mobile { get; set; }
 
+    [EmailAddress]
     public string Email { get; set; }
 
     public List<Book> Books { get; set; }
+
+    [Timestamp]
+    public byte[] Version { get; set; }
   }
 }

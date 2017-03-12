@@ -15,5 +15,8 @@ namespace BooksNet.Models
     public string Address { get; set; }
 
     public List<Book> Books { get; set; }
+
+    [Timestamp]
+    public byte[] Version { get; set; }
   }
 }

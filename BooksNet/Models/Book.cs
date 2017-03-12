@@ -39,5 +39,8 @@ namespace BooksNet.Models
     public int PublisherId { get; set; }
 
     public string FileName { get; set; }
+
+    [Timestamp]
+    public byte[] Version { get; set; }
   }
 }
