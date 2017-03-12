@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BooksNet.Models
 {
@@ -14,15 +15,12 @@ namespace BooksNet.Models
 
     [Required]
     public AgeSet Age { get; set; }
-
     
-    public Category MainCategory { get; set; }
+    [Required]
+    public int CategoryId { get; set; }
 
     [Required]
-    public int MainCategoryId { get; set; }
-
-    [Required]
-    public List<Category> Subcategories { get; set; }
+    public List<Category> Categories { get; set; }
 
     [Required]
     public int Print { get; set; }

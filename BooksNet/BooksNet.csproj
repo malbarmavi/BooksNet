@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201703090334271_Initial.Designer.cs">
       <DependentUpon>201703090334271_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703120545225_AddMainModels.cs" />
+    <Compile Include="Migrations\201703120545225_AddMainModels.Designer.cs">
+      <DependentUpon>201703120545225_AddMainModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgeSet.cs" />
@@ -271,6 +275,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703090334271_Initial.resx">
       <DependentUpon>201703090334271_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703120545225_AddMainModels.resx">
+      <DependentUpon>201703120545225_AddMainModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
