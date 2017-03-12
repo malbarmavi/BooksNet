@@ -25,7 +25,7 @@ namespace BooksNet.Models
     /// <summary>
     /// Last update happen on the user like update name,email,password
     /// </summary>
-    public DateTime UpdateDate { get; set; }
+    public DateTime LastUpdate { get; set; }
 
     [Timestamp]
     public byte[] Version { get; set; }
