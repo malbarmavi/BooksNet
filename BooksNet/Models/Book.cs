@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BooksNet.Models
 {
@@ -15,7 +14,7 @@ namespace BooksNet.Models
 
     [Required]
     public AgeSet Age { get; set; }
-    
+
     [Required]
     public int CategoryId { get; set; }
 
@@ -39,6 +38,10 @@ namespace BooksNet.Models
     public int PublisherId { get; set; }
 
     public string FileName { get; set; }
+
+    public DateTime CreateDate { get; set; }
+
+    public DateTime LastUpdate { get; set; }
 
     [Timestamp]
     public byte[] Version { get; set; }
