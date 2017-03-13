@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BooksNet.Models
@@ -14,6 +15,9 @@ namespace BooksNet.Models
 
     [Timestamp]
     public byte[] Version { get; set; }
-  }
 
+    public DateTime CreateDate { get; set; }
+
+    public DateTime LastUpdate { get; set; }
+  }
 }
