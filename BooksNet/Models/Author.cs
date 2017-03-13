@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BooksNet.Models
@@ -25,6 +26,12 @@ namespace BooksNet.Models
     public string Email { get; set; }
 
     public List<Book> Books { get; set; }
+
+    public int Pages { get; set; }
+
+    public DateTime CreateDate { get; set; }
+
+    public DateTime LastUpdate { get; set; }
 
     [Timestamp]
     public byte[] Version { get; set; }
