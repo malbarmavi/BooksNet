@@ -1,0 +1,43 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Issues.ViewModels.Users
+{
+  public class NewUserViewModel
+  {
+    [Required]
+    [MaxLength(150)]
+    [Display(Name = "First name")]
+    public string FirstName { get; set; }
+
+    [Required]
+    [MaxLength(150)]
+    [Display(Name = "Last name")]
+    public string LastName { get; set; }
+
+    [Required]
+    [EmailAddress]
+    [Display(Name = "Email")]
+    [DataType(DataType.EmailAddress)]
+    public string Email { get; set; }
+
+    [Required]
+    [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+    [DataType(DataType.Password)]
+    [Display(Name = "Password")]
+    public string Password { get; set; }
+
+    [Display(Name = "Confirm password")]
+    [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+    [DataType(DataType.Password)]
+    public string ConfirmPassword { get; set; }
+
+    [MaxLength(250)]
+    public string Address { get; set; }
+
+    [Display(Name = "Phone number")]
+    public string PhoneNumber { get; set; }
+
+    [Timestamp]
+    public byte[] Version { get; set; }
+  }
+}
