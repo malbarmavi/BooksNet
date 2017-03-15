@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BooksNet.Controllers
+namespace BooksNet.Areas.Admin.Controllers
 {
   [Authorize]
   public class ManageController : Controller
