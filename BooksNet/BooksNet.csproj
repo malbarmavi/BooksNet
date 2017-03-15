@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201703132036338_UpdateModels.Designer.cs">
       <DependentUpon>201703132036338_UpdateModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703151916526_UpdateBookModel.cs" />
+    <Compile Include="Migrations\201703151916526_UpdateBookModel.Designer.cs">
+      <DependentUpon>201703151916526_UpdateBookModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgeSet.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703132036338_UpdateModels.resx">
       <DependentUpon>201703132036338_UpdateModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703151916526_UpdateBookModel.resx">
+      <DependentUpon>201703151916526_UpdateBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
