@@ -43,6 +43,8 @@ namespace BooksNet.Models
 
     public DateTime LastUpdate { get; set; }
 
+    public int PagesNumber { get; set; }
+
     [Timestamp]
     public byte[] Version { get; set; }
   }
