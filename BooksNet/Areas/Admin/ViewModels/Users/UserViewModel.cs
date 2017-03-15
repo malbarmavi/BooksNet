@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace Issues.ViewModels.Users
+namespace BooksNet.Areas.Admin.ViewModels.Users
 {
-  public class NewUserViewModel
+  public class UserViewModel
   {
     [Required]
     [MaxLength(150)]
@@ -20,19 +21,14 @@ namespace Issues.ViewModels.Users
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 
-    [Required]
-    [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-    [DataType(DataType.Password)]
-    [Display(Name = "Password")]
-    public string Password { get; set; }
-
-    [Display(Name = "Confirm password")]
-    [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-    [DataType(DataType.Password)]
-    public string ConfirmPassword { get; set; }
-
     [MaxLength(250)]
     public string Address { get; set; }
+
+    [Display(Name = "Create date")]
+    public DateTime CreateDate { get; set; }
+
+    [Display(Name = "Last update")]
+    public DateTime LastUpdate { get; set; }
 
     [Display(Name = "Phone number")]
     public string PhoneNumber { get; set; }

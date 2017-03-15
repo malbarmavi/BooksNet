@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Issues.ViewModels.Users
+namespace BooksNet.Areas.Admin.ViewModels.Users
 {
-  public class UserViewModel
+  public class EditUserViewModel
   {
     [Required]
     [MaxLength(150)]
@@ -23,12 +22,6 @@ namespace Issues.ViewModels.Users
 
     [MaxLength(250)]
     public string Address { get; set; }
-
-    [Display(Name = "Create date")]
-    public DateTime CreateDate { get; set; }
-
-    [Display(Name = "Last update")]
-    public DateTime LastUpdate { get; set; }
 
     [Display(Name = "Phone number")]
     public string PhoneNumber { get; set; }
