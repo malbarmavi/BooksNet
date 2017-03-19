@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BooksNet</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/material-dashboard.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/app.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container body-content ">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Muhammad Albarmawi</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/material.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/material-dashboard.js"></script>
+    <script src="~/Areas/Admin/Scripts/bootstrap-notify.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -219,11 +219,15 @@
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\app.js" />
+    <Content Include="Areas\Admin\Content\material-dashboard.css" />
+    <Content Include="Areas\Admin\Scripts\bootstrap-notify.js" />
+    <Content Include="Areas\Admin\Scripts\material-dashboard.js" />
+    <Content Include="Areas\Admin\Scripts\material.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -244,7 +248,10 @@
     <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Areas\Admin\Content\app.css" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
