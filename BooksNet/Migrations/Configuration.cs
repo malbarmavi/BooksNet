@@ -1,31 +1,17 @@
 namespace BooksNet.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+  using BooksNet.Models;
+  using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BooksNet.Models.ApplicationDbContext>
+  internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+  {
+    public Configuration()
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = false;
-        }
-
-        protected override void Seed(BooksNet.Models.ApplicationDbContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-        }
+      AutomaticMigrationsEnabled = false;
     }
+
+    protected override void Seed(ApplicationDbContext context)
+    {
+    }
+  }
 }
