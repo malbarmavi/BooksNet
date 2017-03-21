@@ -1,8 +1,19 @@
 ﻿
+body {
+    margin-top:100px;
+}
 
 /* */
 .no-padding {
     padding:0 !important;
+}
+
+.display-inline-block {
+    display:inline-block !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom:0 !important;
 }
 
 .top-5 { 

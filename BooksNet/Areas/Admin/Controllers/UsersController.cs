@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace BooksNet.Areas.Admin.Controllers
 {
+  [Authorize]
   public class UsersController : Controller
   {
     private ApplicationDbContext db = new ApplicationDbContext();
