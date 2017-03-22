@@ -16,20 +16,6 @@ namespace BooksNet.Areas.Admin.Controllers
       return View(await db.Users.ToListAsync());
     }
 
-    public async Task<ActionResult> Details(string id)
-    {
-      if (id == null)
-      {
-        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-      }
-      ApplicationUser applicationUser = await db.Users.SingleAsync(u => u.Id == id);
-      if (applicationUser == null)
-      {
-        return HttpNotFound();
-      }
-      return View(applicationUser);
-    }
-
     public ActionResult Create()
     {
       return View();
