@@ -12,7 +12,7 @@
     <link href="~/Areas/Admin/Content/app.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BooksNet", "Index", "Dashboard", new { area = "Admin" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -52,6 +52,8 @@
     <script src="~/Areas/Admin/Scripts/material.min.js"></script>
     <script src="~/Areas/Admin/Scripts/material-dashboard.js"></script>
     <script src="~/Areas/Admin/Scripts/bootstrap-notify.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>  
     @RenderSection("scripts", required: false)
 </body>
 </html>

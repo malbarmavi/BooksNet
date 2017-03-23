@@ -49,3 +49,10 @@ footer {
 .card-title { 
     margin-top:10px !important;
 }
+
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: #e91e63;
+    margin-left:4px;
+}
