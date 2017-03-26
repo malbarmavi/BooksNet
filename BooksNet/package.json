@@ -1,0 +1,22 @@
+{
+  "name": "booksnet",
+  "version": "1.0.0",
+  "description": "Online books library management",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbarmawi/BooksNet.git"
+  },
+  "author": "Muhammad Khair Albarmawi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbarmawi/BooksNet/issues"
+  },
+  "homepage": "https://github.com/mbarmawi/BooksNet#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
