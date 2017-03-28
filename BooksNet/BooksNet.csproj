@@ -221,8 +221,8 @@
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Scripts\app.js" />
     <Content Include="Areas\Admin\Content\material-dashboard.css" />
+    <Content Include="Areas\Admin\Scripts\app.js" />
     <Content Include="Areas\Admin\Scripts\bootstrap-notify.js" />
     <Content Include="Areas\Admin\Scripts\material-dashboard.js" />
     <Content Include="Areas\Admin\Scripts\material.min.js" />
@@ -246,7 +246,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Areas\Admin\Content\app.css" />
+    <None Include="Areas\Admin\Content\app.scss" />
     <Content Include="Areas\Admin\Views\Error\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
