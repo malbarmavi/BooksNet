@@ -221,6 +221,7 @@
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\admin.css" />
     <Content Include="Areas\Admin\Content\material-dashboard.css" />
     <Content Include="Areas\Admin\Scripts\app.js" />
     <Content Include="Areas\Admin\Scripts\bootstrap-notify.js" />
