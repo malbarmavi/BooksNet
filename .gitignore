@@ -250,6 +250,8 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# generated css files
 /BooksNet/Areas/Admin/Content/admin.css
 /BooksNet/Areas/Admin/Content/app.min.css
 /BooksNet/Areas/Admin/Content/app.css
