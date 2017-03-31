@@ -5,6 +5,9 @@ namespace BooksNet.Areas.Admin.ViewModels.Users
   public class EditUserViewModel
   {
     [Required]
+    public string Id { get; set; }
+
+    [Required]
     [MaxLength(150)]
     [Display(Name = "First name")]
     public string FirstName { get; set; }

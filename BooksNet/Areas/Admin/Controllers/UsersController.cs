@@ -1,4 +1,9 @@
-﻿using BooksNet.Models;
+﻿using BooksNet.Areas.Admin.Models;
+using BooksNet.Areas.Admin.ViewModels.Users;
+using BooksNet.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Data.Entity;
 using System.Net;
 using System.Threading.Tasks;
@@ -23,16 +28,30 @@ namespace BooksNet.Areas.Admin.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create(ApplicationUser applicationUser)
+    public async Task<ActionResult> Create(NewUserViewModel user)
     {
       if (ModelState.IsValid)
       {
-        db.Users.Add(applicationUser);
-        await db.SaveChangesAsync();
+        ApplicationUser admin = new ApplicationUser()
+        {
+          Email = user.Email,
+          UserName = user.Email,
+          FirstName = user.FirstName,
+          LastName = user.LastName,
+          CreateDate = DateTime.Now,
+          LastUpdate = DateTime.Now
+        };
+
+        var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        var result = await userManager.CreateAsync(admin, user.Password);
+        if (result.Succeeded)
+        {
+          userManager.AddToRole(admin.Id, Roles.Admin);
+        }
         return RedirectToAction("Index");
       }
 
-      return View(applicationUser);
+      return View(user);
     }
 
     public async Task<ActionResult> Edit(string id)
@@ -41,25 +60,42 @@ namespace BooksNet.Areas.Admin.Controllers
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      ApplicationUser applicationUser = await db.Users.SingleAsync(u => u.Id == id);
-      if (applicationUser == null)
+      ApplicationUser user = await db.Users.SingleAsync(u => u.Id == id);
+      if (user == null)
       {
         return HttpNotFound();
       }
-      return View(applicationUser);
+      return View(new EditUserViewModel() {
+        Id =user.Id,
+        FirstName=user.FirstName,
+        LastName = user.LastName,
+        Email = user.Email,
+        Address = user.Address,
+        PhoneNumber= user.PhoneNumber,
+        Version = user.Version
+      });
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Edit(ApplicationUser applicationUser)
+    public async Task<ActionResult> Edit(EditUserViewModel model)
     {
       if (ModelState.IsValid)
       {
-        db.Entry(applicationUser).State = EntityState.Modified;
+
+        ApplicationUser user = await db.Users.SingleAsync(u => u.Id == model.Id);
+        user.FirstName = model.FirstName;
+        user.LastName = model.LastName;
+        user.Email = model.Email;
+        user.UserName = model.Email;
+        user.PhoneNumber = model.PhoneNumber;
+        user.Address = model.Address;
+     
+        db.Entry(user).State = EntityState.Modified;
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
-      return View(applicationUser);
+      return View(model);
     }
 
     public async Task<ActionResult> Delete(string id)
