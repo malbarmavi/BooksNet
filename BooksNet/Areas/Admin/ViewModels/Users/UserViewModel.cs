@@ -32,6 +32,5 @@ namespace BooksNet.Areas.Admin.ViewModels.Users
 
     [Display(Name = "Phone number")]
     public string PhoneNumber { get; set; }
-
   }
 }
