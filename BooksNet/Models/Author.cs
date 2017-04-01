@@ -27,8 +27,6 @@ namespace BooksNet.Models
 
     public List<Book> Books { get; set; }
 
-    public int Pages { get; set; }
-
     public DateTime CreateDate { get; set; }
 
     public DateTime LastUpdate { get; set; }
