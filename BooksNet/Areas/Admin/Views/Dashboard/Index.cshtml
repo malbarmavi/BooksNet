@@ -1,6 +1,8 @@
-﻿
-@{
+﻿@model BooksNet.Areas.Admin.ViewModels.Dashboard.DashboardViewModel
 
+@{
+  ViewBag.Title = "Index";
+  Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="content">
@@ -13,21 +15,9 @@
                     </div>
                     <div class="card-content">
                         <p class="category">Users</p>
-                        <h3 class="title">15</h3>
+                        <h3 class="title">@Model.UsersCount</h3>
                     </div>
                     
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header" data-background-color="red">
-                        <i class="material-icons">print</i>
-                    </div>
-                    <div class="card-content">
-                        <p class="category">Publisher</p>
-                        <h3 class="title">25</h3>
-                    </div>
-
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -36,8 +26,20 @@
                         <i class="material-icons">mode_edit</i>
                     </div>
                     <div class="card-content">
-                        <p class="category">Authoes</p>
-                        <h3 class="title">35</h3>
+                        <p class="category">Authors</p>
+                        <h3 class="title">@Model.AuthorsCount</h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="red">
+                        <i class="material-icons">print</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Publishers</p>
+                        <h3 class="title">@Model.PublishersCount</h3>
                     </div>
 
                 </div>
@@ -49,7 +51,7 @@
                     </div>
                     <div class="card-content">
                         <p class="category">Books</p>
-                        <h3 class="title">125</h3>
+                        <h3 class="title">@Model.BooksCount</h3>
                     </div>
 
                 </div>
