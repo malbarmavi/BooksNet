@@ -70,20 +70,37 @@ namespace BooksNet.Areas.Admin.Controllers
       {
         return HttpNotFound();
       }
-      return View(author);
+      return View(new EditAuthorViewModel() {
+        Id=author.Id,
+        FirstName = author.FirstName,
+        LastName=author.LastName,
+        Email=author.Email,
+        Address=author.Address,
+        PhoneNumber=author.PhoneNumber,
+        Version =author.Version
+      });
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Edit([Bind(Include = "Id,Name,LastName,Address,Mobile,Email,CreateDate,LastUpdate,Version")] Author author)
+    public async Task<ActionResult> Edit(EditAuthorViewModel model)
     {
       if (ModelState.IsValid)
       {
+        Author author = await db.Authours.FindAsync(model.Id);
+
+        author.FirstName = model.FirstName;
+        author.LastName = model.LastName;
+        author.Email = model.Email;
+        author.Address = model.Address;
+        author.PhoneNumber = model.PhoneNumber;
+        author.LastUpdate = DateTime.Now;
+
         db.Entry(author).State = EntityState.Modified;
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
-      return View(author);
+      return View(model);
     }
 
     public async Task<ActionResult> Delete(int? id)
