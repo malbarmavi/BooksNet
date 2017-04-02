@@ -173,6 +173,7 @@
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PublishersController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\Roles.cs" />
     <Compile Include="Areas\Admin\ViewModels\Author\EditAuthorViewModel.cs" />
@@ -275,6 +276,11 @@
     <Content Include="Areas\Admin\Views\Authors\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Publishers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Publishers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Publishers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Publishers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Publishers\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
