@@ -12,7 +12,7 @@ namespace BooksNet.Models
     [Required]
     public string Name { get; set; }
 
-    [Required]
+  
     public string Address { get; set; }
 
     public List<Book> Books { get; set; }

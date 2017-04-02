@@ -44,7 +44,7 @@ namespace BooksNet.Areas.Admin.Controllers
       {
         db.Authours.Add(new Author()
         {
-          Name = model.FirstName,
+          FirstName = model.FirstName,
           LastName = model.LastName,
           Email = model.Email,
           Address = model.Address,

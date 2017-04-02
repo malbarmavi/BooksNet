@@ -13,7 +13,12 @@ namespace BooksNet.Areas.Admin.Controllers
     public ActionResult Index()
     {
       DashboardViewModel model = new DashboardViewModel();
+
       model.UsersCount = db.Users.Count();
+      model.AuthorsCount= db.Authours.Count();
+      model.PublishersCount = db.Publishers.Count();
+      model.BooksCount = db.Books.Count();
+
       return View(model);
     }
 
