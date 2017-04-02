@@ -1,4 +1,6 @@
-﻿using BooksNet.Models;
+﻿using BooksNet.Areas.Admin.ViewModels.Author;
+using BooksNet.Models;
+using System;
 using System.Data.Entity;
 using System.Net;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ namespace BooksNet.Areas.Admin.Controllers
 
     public async Task<ActionResult> Index()
     {
-      return View(await db.Authours.ToListAsync());
+      return View(await db.Authours.Include(a => a.Books).ToListAsync());
     }
 
     public async Task<ActionResult> Details(int? id)
@@ -36,16 +38,25 @@ namespace BooksNet.Areas.Admin.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create([Bind(Include = "Id,Name,LastName,Address,Mobile,Email,CreateDate,LastUpdate,Version")] Author author)
+    public async Task<ActionResult> Create(NewAuthorViewModel model)
     {
       if (ModelState.IsValid)
       {
-        db.Authours.Add(author);
+        db.Authours.Add(new Author()
+        {
+          Name = model.FirstName,
+          LastName = model.LastName,
+          Email = model.Email,
+          Address = model.Address,
+          PhoneNumber = model.PhoneNumber,
+          CreateDate = DateTime.Now,
+          LastUpdate = DateTime.Now
+        });
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
 
-      return View(author);
+      return View(model);
     }
 
     public async Task<ActionResult> Edit(int? id)

@@ -175,6 +175,8 @@
     <Compile Include="Areas\Admin\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\Roles.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Author\EditAuthorViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Author\NewAuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
