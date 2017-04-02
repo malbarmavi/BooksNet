@@ -70,14 +70,15 @@ namespace BooksNet.Areas.Admin.Controllers
       {
         return HttpNotFound();
       }
-      return View(new EditAuthorViewModel() {
-        Id=author.Id,
+      return View(new EditAuthorViewModel()
+      {
+        Id = author.Id,
         FirstName = author.FirstName,
-        LastName=author.LastName,
-        Email=author.Email,
-        Address=author.Address,
-        PhoneNumber=author.PhoneNumber,
-        Version =author.Version
+        LastName = author.LastName,
+        Email = author.Email,
+        Address = author.Address,
+        PhoneNumber = author.PhoneNumber,
+        Version = author.Version
       });
     }
 
