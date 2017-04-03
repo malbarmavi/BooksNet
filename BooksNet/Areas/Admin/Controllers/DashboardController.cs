@@ -17,6 +17,7 @@ namespace BooksNet.Areas.Admin.Controllers
       model.UsersCount = db.Users.Count();
       model.AuthorsCount= db.Authours.Count();
       model.PublishersCount = db.Publishers.Count();
+      model.CategoriesCount = db.Categories.Count();
       model.BooksCount = db.Books.Count();
 
       return View(model);
