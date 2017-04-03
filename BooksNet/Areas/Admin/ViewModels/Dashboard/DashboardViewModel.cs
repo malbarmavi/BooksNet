@@ -13,6 +13,8 @@ namespace BooksNet.Areas.Admin.ViewModels.Dashboard
 
     public int PublishersCount { get; set; }
 
+    public int CategoriesCount { get; set; }
+
     public int BooksCount { get; set; }
   }
 }
