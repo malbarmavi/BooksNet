@@ -4,7 +4,7 @@
 }
 
 body {
-    padding-top : 100px;
+    padding-top: 100px;
     padding-bottom: 85px;
     position: relative;
     width: 100%;
@@ -19,10 +19,7 @@ footer {
     bottom: 0;
     left: 0;
     padding: 10pt 0 5pt 0;
-
-
 }
-
 
 .add {
     width: 6rem;
@@ -34,10 +31,9 @@ footer {
     margin: 0;
 }
 
-    .add .material-icons {
-        font-size:2.5rem;
-    }
-
+.add .material-icons {
+    font-size: 2.5rem;
+}
 
 .fixed-corner {
     position: fixed;
@@ -45,13 +41,33 @@ footer {
     right: 2.5rem;
 }
 
-.card-title { 
-    margin-top:10px !important;
+.card-title {
+    margin-top: 10px !important;
 }
 
 .required:after {
     content: "*";
     font-weight: bold;
     color: #e91e63;
-    margin-left:4px;
+    margin-left: 4px;
+}
+
+.my-links {
+    a {
+        cursor: pointer;
+        color: #a6a9ac !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease-in-out;
+        font-size: 1.65rem;
+        margin: 0 0.2rem;
+
+        &:hover {
+            color: #000 !important;
+        }
+    }
+}
+
+
+.color-white {
+    color:#fff !important;
 }

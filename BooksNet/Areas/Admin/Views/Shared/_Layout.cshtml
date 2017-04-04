@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BooksNet</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Areas/Admin/Content/admin.css?v=@AppSettings.Build" rel="stylesheet" />
 </head>
@@ -25,6 +27,7 @@
                     <li>@Html.ActionLink("Users", "Index", "Users")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
                     <li>@Html.ActionLink("Publishers", "Index", "Publishers")</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -34,8 +37,19 @@
         @RenderBody()
     </div>
     <footer>
-        <div class="container text-left ">
-            <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <p class="text-right my-links">
+                        <span><a target="_blank" href="https://www.linkedin.com/in/mbarmawi" class="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>  </span>
+                        <span><a target="_blank" href="http://codepen.io/mbarmawi/" class="codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a>             </span>
+                        <span><a target="_blank" href="http://github.com/mbarmawi/" class="git"><i class="fa fa-github" aria-hidden="true"></i></a>                  </span>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -45,7 +59,7 @@
     <script src="~/Areas/Admin/Scripts/material-dashboard.js"></script>
     <script src="~/Areas/Admin/Scripts/bootstrap-notify.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>  
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Areas/Admin/Scripts/app.js?v=@AppSettings.Build"></script>
     @RenderSection("scripts", required: false)
 </body>
