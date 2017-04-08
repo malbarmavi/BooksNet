@@ -1,4 +1,5 @@
 ﻿using BooksNet.Models;
+using System;
 using System.Data.Entity;
 using System.Net;
 using System.Threading.Tasks;
@@ -40,6 +41,9 @@ namespace BooksNet.Areas.Admin.Controllers
     {
       if (ModelState.IsValid)
       {
+        category.CreateDate = DateTime.Now;
+        category.LastUpdate = DateTime.Now;
+
         db.Categories.Add(category);
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
