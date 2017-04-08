@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201704020707199_UpdateModels1.Designer.cs">
       <DependentUpon>201704020707199_UpdateModels1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704080156138_UpdateCategoryModel.cs" />
+    <Compile Include="Migrations\201704080156138_UpdateCategoryModel.Designer.cs">
+      <DependentUpon>201704080156138_UpdateCategoryModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgeSet.cs" />
@@ -379,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704020707199_UpdateModels1.resx">
       <DependentUpon>201704020707199_UpdateModels1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704080156138_UpdateCategoryModel.resx">
+      <DependentUpon>201704080156138_UpdateCategoryModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
