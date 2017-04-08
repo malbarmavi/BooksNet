@@ -4,49 +4,47 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div class="card">
 
-<h2>Index</h2>
+        <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">local_offer</i>
+        </div>
+        <h4 class="card-title">Categories</h4>
+        <br />
+        <div class="card-content table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.Books)</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Version)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastUpdate)
-        </th>
-        <th></th>
-    </tr>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Books.Count)
+                        </td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Version)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastUpdate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                        <td class="td-actions text-right">
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-success btn-round"> <i class="material-icons">edit</i></a>
+                            <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-round"> <i class="material-icons">close</i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-md-3"></div>
 
-</table>
+<a href="@Url.Action("Create")" class=" btn btn-primary add fixed-corner"><i class="material-icons">add</i></a>
