@@ -72,7 +72,12 @@ namespace BooksNet.Areas.Admin.Controllers
     {
       if (ModelState.IsValid)
       {
-        db.Entry(category).State = EntityState.Modified;
+        category.LastUpdate = DateTime.Now;
+        db.Categories.Attach(category);
+        db.Entry(category).Property(c => c.Name).IsModified = true;
+        db.Entry(category).Property(c => c.LastUpdate  ).IsModified = true;
+        db.Entry(category).Property(c => c.Version).IsModified = true;
+
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
