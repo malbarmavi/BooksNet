@@ -21,10 +21,9 @@ namespace BooksNet.Models
     [Required]
     public List<Category> Categories { get; set; }
 
-    [Required]
-    public int Print { get; set; }
+    public string Print { get; set; }
 
-    public DateTime PublishDate { get; set; }
+    public string PrintDate { get; set; }
 
     [MaxLength(250)]
     public string Notes { get; set; }
@@ -47,5 +46,8 @@ namespace BooksNet.Models
 
     [Timestamp]
     public byte[] Version { get; set; }
+
+    [MaxLength(500)]
+    public string Descriptions { get; set; }
   }
 }
