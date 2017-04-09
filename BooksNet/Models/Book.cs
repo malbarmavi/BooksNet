@@ -36,7 +36,10 @@ namespace BooksNet.Models
     [Required]
     public int PublisherId { get; set; }
 
+    [Required]
     public string FileName { get; set; }
+
+    public string CoverImageName { get; set; }
 
     public DateTime CreateDate { get; set; }
 
