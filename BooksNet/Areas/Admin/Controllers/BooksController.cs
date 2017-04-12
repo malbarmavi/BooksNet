@@ -1,9 +1,13 @@
 ﻿using System;
-using BooksNet.Models;
+using System.Linq;
 using System.Data.Entity;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BooksNet.Models;
+using BooksNet.Areas.Admin.ViewModels.Book;
+using System.Collections.Generic;
+using System.IO;
 
 namespace BooksNet.Areas.Admin.Controllers
 {
@@ -33,23 +37,66 @@ namespace BooksNet.Areas.Admin.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name");
-      return View();
+      //ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name");
+      NewBookViewModel model = new NewBookViewModel();
+      var categories = db.Categories.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var publishers = db.Publishers.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var authours = db.Authours.Select(c => new { Id = c.Id, Name = c.FirstName }).ToList();
+
+      model.Category = new SelectList(categories, "Id", "Name");
+      model.Categories = new MultiSelectList(categories, "Id", "Name");
+      model.Authors = new MultiSelectList(authours, "Id", "Name");
+      model.Publisher = new SelectList(publishers, "Id", "Name");
+
+      return View(model);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create([Bind(Include = "Id,Title,Age,CategoryId,Print,PrintDate,Notes,PublisherId,FileName,CoverImageName,CreateDate,LastUpdate,PagesNumber,Version,Descriptions")] Book book)
+    public async Task<ActionResult> Create(NewBookViewModel model)
     {
       if (ModelState.IsValid)
       {
+        if (model.File.ContentLength > 0)
+        {
+          model.File.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksFiles"), Path.GetFileName(model.File.FileName))) ;
+        }
+
+        if (model.File.ContentLength > 0)
+        {
+          model.File.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
+        }
+
+        Book book = new Book();
+        book.Title = model.Title;
+        book.Age = model.Age;
+        book.Descriptions = model.Descriptions;
+        book.CategoryId = model.CategoryId;
+        book.Authors = db.Authours.Where(a => model.AuthorsId.Contains(a.Id)).ToList();
+        book.Categories = db.Categories.Where(c => model.CategoriesId.Contains(c.Id)).ToList();
+        book.PublisherId = model.PublisherId;
+        book.Print = model.Print;
+        book.PrintDate = model.PrintDate;
+        book.FileName = model.File.FileName;
+        book.CoverImageName = model.CoverImage.FileName ?? "";
+        book.CreateDate = DateTime.Now;
+        book.LastUpdate = DateTime.Now;
+
         db.Books.Add(book);
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
 
-      ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name", book.PublisherId);
-      return View(book);
+      var categories = db.Categories.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var publishers = db.Publishers.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var authours = db.Authours.Select(c => new { Id = c.Id, Name = c.FirstName }).ToList();
+
+      model.Category = new SelectList(categories, "Id", "Name", model.CategoryId);
+      model.Categories = new MultiSelectList(categories, "Id", "Name", model.CategoriesId);
+      model.Authors = new MultiSelectList(authours, "Id", "Name", model.AuthorsId);
+      model.Publisher = new SelectList(publishers, "Id", "Name", model.PublisherId);
+
+      return View(model);
     }
 
     public async Task<ActionResult> Edit(int? id)

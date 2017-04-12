@@ -180,6 +180,7 @@
     <Compile Include="Areas\Admin\Models\Roles.cs" />
     <Compile Include="Areas\Admin\ViewModels\Author\EditAuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Author\NewAuthorViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Book\NewBookViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Publisher\EditPublisherViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Publisher\NewPublisherViewModel.cs" />
@@ -259,6 +260,7 @@
     <Content Include="Areas\Admin\Content\material-dashboard.css" />
     <Content Include="Areas\Admin\Scripts\app.js" />
     <Content Include="Areas\Admin\Scripts\bootstrap-notify.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.select-bootstrap.js" />
     <Content Include="Areas\Admin\Scripts\material-dashboard.js" />
     <Content Include="Areas\Admin\Scripts\material.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -358,7 +360,8 @@
     <Content Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\BooksCoverImage\" />
+    <Folder Include="App_Data\BooksFiles\" />
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
   <ItemGroup>

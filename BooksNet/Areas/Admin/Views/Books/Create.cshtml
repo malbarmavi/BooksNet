@@ -1,132 +1,100 @@
-﻿@model BooksNet.Models.Book
+﻿@model BooksNet.Areas.Admin.ViewModels.Book.NewBookViewModel
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+  ViewBag.Title = "Create";
+  Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm("Create", "Books", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Book</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
+@Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Age, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+@*<ol class="breadcrumb">
+        <li><a href="@Url.Action("Index","Dashboard") ">Dashboard</a></li>
+        <li><a href="@Url.Action("Index","Users")">Users</a></li>
+        <li class="active">Create</li>
+    </ol>*@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-icon" data-background-color="blue">
+                <i class="material-icons">book</i>
             </div>
-        </div>
+            <h4 class="card-title">Add book</h4>
+            <br />
+            <div class="card-content">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Title, new { @class = "control-label required" })
+                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Print, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Print, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Print, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrintDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrintDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrintDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Age, new { @class = "control-label required" })
+                    @Html.EnumDropDownListFor(model => model.Age, new { @class = "form-control" })
+                </div>
+                <div class="row">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="col-md-12">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PublisherId, "PublisherId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PublisherId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PublisherId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group label-floating">
+                            @Html.LabelFor(model => model.Category, new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.CategoryId, Model.Category, new { @class = "selectpicker", data_style = "btn btn-info " })
+                        </div>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Categories, new { @class = "control-label" })
+                    @Html.ListBoxFor(model => model.CategoriesId, Model.Categories, new { @class = "form-control" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Publisher, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.PublisherId, Model.Publisher, new { @class = "form-control" })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CoverImageName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CoverImageName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CoverImageName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Authors, new { @class = "control-label" })
+                    @Html.ListBoxFor(model => model.AuthorsId, Model.Authors, new { @class = "form-control" })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Print, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Print, new { @class = "form-control" })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastUpdate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastUpdate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastUpdate, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.PrintDate, new { @class = "control-label" })
+                    @Html.EditorFor(model => model.PrintDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PagesNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PagesNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PagesNumber, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.Descriptions, new { @class = "control-label" })
+                    @Html.TextAreaFor(model => model.Descriptions, new { @class = "form-control" })
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Descriptions, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Descriptions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.File, new { @class = "control-label" })
+                    <input type="file" name="File" id="file" class="form-control" accept=".pdf" />
+                </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <div class="form-group label-floating">
+                    @Html.LabelFor(model => model.CoverImage, new { @class = "control-label" })
+                    <input type="file" name="CoverImage" id="CoverImage" class="form-control"  accept="image/jpeg,image/png" />
+                </div>
+
+
+                <button type="submit" class="btn btn-fill btn-info pull-right">Submit</button>
+
             </div>
         </div>
     </div>
+    <div class="col-md-2"></div>
+
+</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
