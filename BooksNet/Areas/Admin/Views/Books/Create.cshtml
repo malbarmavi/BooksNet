@@ -5,6 +5,11 @@
   Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+@section styles {
+    <link href="~/Areas/Admin/Content/file-upload.css?v=@AppSettings.Build" rel="stylesheet" />
+}
+
+
 @using (Html.BeginForm("Create", "Books", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 @Html.AntiForgeryToken()
@@ -14,6 +19,7 @@
         <li><a href="@Url.Action("Index","Users")">Users</a></li>
         <li class="active">Create</li>
     </ol>*@
+
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -58,17 +64,21 @@
                 </div>
                 <div class="form-group label-floating">
                     @Html.LabelFor(model => model.Descriptions, new { @class = "control-label" })
-                    @Html.TextAreaFor(model => model.Descriptions, new { @class = "form-control",rows =5 })
+                    @Html.TextAreaFor(model => model.Descriptions, new { @class = "form-control", rows = 5 })
                 </div>
-               
+
                 <div class="form-group">
-                    @Html.LabelFor(model => model.File, new { @class = "control-label" })
-                    <input type="file" name="File" id="file" class="form-control" accept=".pdf" />
+                    <label class="control-label">File</label>
+                    <input type="file" name="File" id="file" class="form-control inputfile" data-multiple-caption="{count} files selected" accept=".pdf" />
+                    <label for="file"><i class="material-icons">file_upload</i><span>Choose a file&hellip;</span></label>
                 </div>
+
                 <div class="form-group">
-                    @Html.LabelFor(model => model.CoverImage, new { @class = "control-label" })
-                    <input type="file" name="CoverImage" id="CoverImage" class="form-control" accept="image/jpeg,image/png" />
+                    <label class="control-label">Cover Image</label>
+                    <input type="file" name="CoverImage" id="coverImage" class="form-control inputfile" data-multiple-caption="{count} files selected" accept=".jpg,.png" />
+                    <label for="coverImage"><i class="material-icons">file_upload</i><span>Choose a file&hellip;</span></label>
                 </div>
+
 
                 <button type="submit" class="btn btn-fill btn-info pull-right">Submit</button>
             </div>
@@ -76,4 +86,8 @@
     </div>
     <div class="col-md-2"></div>
 </div>
+}
+
+@section scripts {
+    <script src="~/Areas/Admin/Scripts/file-upload.js?v=@AppSettings.Build"></script>
 }

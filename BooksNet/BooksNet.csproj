@@ -257,9 +257,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\admin.css" />
+    <Content Include="Areas\Admin\Content\file-upload.css" />
     <Content Include="Areas\Admin\Content\material-dashboard.css" />
     <Content Include="Areas\Admin\Scripts\app.js" />
     <Content Include="Areas\Admin\Scripts\bootstrap-notify.js" />
+    <Content Include="Areas\Admin\Scripts\file-upload.js" />
     <Content Include="Areas\Admin\Scripts\jquery.select-bootstrap.js" />
     <Content Include="Areas\Admin\Scripts\material-dashboard.js" />
     <Content Include="Areas\Admin\Scripts\material.min.js" />
