@@ -17,7 +17,7 @@ const config = {
             dest: 'areas/admin/content',
             files: ['areas/admin/content/material-dashboard.css', 'areas/admin/content/app.css'],
             minifyFiles: ['areas/admin/content/material-dashboard.min.css', 'areas/admin/content/app.min.css'],
-            cleanFiles: ["areas/admin/content/*.css", "!areas/admin/content/material-dashboard.css"],
+            cleanFiles: ["areas/admin/content/*.css", "!areas/admin/content/material-dashboard.css", "!areas/admin/content/file-upload.css"],
             sass: {
                 src: 'areas/admin/content/*.scss'
 
