@@ -62,9 +62,9 @@ namespace BooksNet.Areas.Admin.Controllers
           model.File.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksFiles"), Path.GetFileName(model.File.FileName))) ;
         }
 
-        if (model.File.ContentLength > 0)
+        if (model.CoverImage?.ContentLength > 0)
         {
-          model.File.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
+          model.CoverImage.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
         }
 
         Book book = new Book();
@@ -78,7 +78,7 @@ namespace BooksNet.Areas.Admin.Controllers
         book.Print = model.Print;
         book.PrintDate = model.PrintDate;
         book.FileName = model.File.FileName;
-        book.CoverImageName = model.CoverImage.FileName ?? "";
+        book.CoverImageName = model.CoverImage?.FileName ?? "";
         book.CreateDate = DateTime.Now;
         book.LastUpdate = DateTime.Now;
 
