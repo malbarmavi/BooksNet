@@ -256,3 +256,7 @@ paket-files/
 /BooksNet/Areas/Admin/Content/app.min.css
 /BooksNet/Areas/Admin/Content/app.css
 /BooksNet/Areas/Admin/Content/material-dashboard.min.css
+/BooksNet/App_Data/BooksFiles/*.pdf
+/BooksNet/App_Data/BooksFiles/*.jpg
+/BooksNet/App_Data/BooksFiles/*.png
+
