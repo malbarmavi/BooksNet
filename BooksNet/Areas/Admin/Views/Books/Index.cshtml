@@ -5,108 +5,66 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Publisher.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Print)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrintDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FileName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CoverImageName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastUpdate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PagesNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Version)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descriptions)
-        </th>
-        <th></th>
-    </tr>
+<div class="col-md-12">
+    <div class="card">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Publisher.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Print)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrintDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FileName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CoverImageName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastUpdate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PagesNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Version)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descriptions)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <div class="card-header card-header-icon" data-background-color="blue">
+            <i class="material-icons">book</i>
+        </div>
+        <h4 class="card-title">Books</h4>
+        <br />
+        <div class="card-content table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Title)</th>
+                        <th>@Html.DisplayNameFor(model => model.Authors)</th>
+                        <th>@Html.DisplayNameFor(model => model.Publisher)</th>
+                        <th>@Html.DisplayNameFor(model => model.Age)</th>
+                        <th>@Html.DisplayNameFor(model => model.Print)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrintDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.PagesNumber)</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-</table>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Authors.Count)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Publisher.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Print)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrintDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PagesNumber)
+                        </td>
+                        <td class="td-actions text-right">
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-success btn-round"> <i class="material-icons">edit</i></a>
+                            <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-round"> <i class="material-icons">close</i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<a href="@Url.Action("Create")" class=" btn btn-info add fixed-corner"><i class="material-icons">add</i></a>

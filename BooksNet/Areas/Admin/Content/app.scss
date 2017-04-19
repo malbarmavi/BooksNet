@@ -81,3 +81,9 @@ footer {
 .dropdown-header span{
     font-size: 0.9em !important;
 }
+
+/* Update hover color */
+.dropdown-menu li a:active, .dropdown-menu li a:focus, .dropdown-menu li a:hover {
+    background-color: #0366d6;
+    color: #fff;
+}
