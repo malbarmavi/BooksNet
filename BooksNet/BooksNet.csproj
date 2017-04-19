@@ -199,7 +199,8 @@
     <Compile Include="Areas\Admin\ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
-    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\WebApiConfig.cs" />
+    <Compile Include="Areas\Api\Controllers\BooksController.cs" />
     <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
@@ -324,7 +325,6 @@
     <Content Include="Areas\Admin\Views\Books\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Books\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Books\Index.cshtml" />
-    <Content Include="Areas\Api\Views\web.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
@@ -378,9 +378,6 @@
   <ItemGroup>
     <Folder Include="App_Data\BooksCoverImage\" />
     <Folder Include="App_Data\BooksFiles\" />
-    <Folder Include="Areas\Api\Controllers\" />
-    <Folder Include="Areas\Api\Models\" />
-    <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
   <ItemGroup>
