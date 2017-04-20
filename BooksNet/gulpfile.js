@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='build' Clean='clean' />
+﻿/// <binding BeforeBuild='build' Clean='clean' ProjectOpened='watch' />
 'use strict';
 
 const gulp = require('gulp');
@@ -26,8 +26,8 @@ const config = {
     },
     css: {
         dest: 'content',
-        files: ['content/material-kit.css', 'content/_books.css'],
-        minifyFiles: ['content/material-kit.min.css', 'content/_books.min.css'],
+        files: ['content/material-kit.css', 'content/books-app.css'],
+        minifyFiles: ['content/material-kit.min.css', 'content/books-app.min.css'],
         sass: {
             src: 'content/*.scss'
         }
@@ -95,6 +95,10 @@ gulp.task('app:concat', ['app:strip'], function () {
         .pipe(gulp.dest(config.css.dest));
 });
 
+gulp.task('watch', function () {
+    gulp.watch(config.css.sass.src, ['build']);
+    gulp.watch(config.admin.css.sass.src, ['build']);
+});
 gulp.task('build', ['admin:concat','app:concat']);
 
 gulp.task('default',['build']);
