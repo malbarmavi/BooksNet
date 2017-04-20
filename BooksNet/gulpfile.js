@@ -23,6 +23,14 @@ const config = {
 
             }
         }
+    },
+    css: {
+        dest: 'content',
+        files: ['content/material-kit.css', 'content/_books.css'],
+        minifyFiles: ['content/material-kit.min.css', 'content/_books.min.css'],
+        sass: {
+            src: 'content/*.scss'
+        }
     }
 }
 
@@ -31,7 +39,7 @@ gulp.task('clean',function () {
         .pipe(clean({ force: true }))
 });
 
-gulp.task('sass', ['clean'], function () {
+gulp.task('admin:sass', ['clean'], function () {
     return gulp
         .src(config.admin.css.sass.src)
         .pipe(sass().on('error', sass.logError))
@@ -39,7 +47,7 @@ gulp.task('sass', ['clean'], function () {
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
-gulp.task('minify',['sass'], function () {
+gulp.task('admin:minify',['admin:sass'], function () {
     return gulp.src(config.admin.css.files)
         .pipe(strip())
         .pipe(cssnano())
@@ -47,19 +55,46 @@ gulp.task('minify',['sass'], function () {
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
-gulp.task('strip', ['minify'], function () {
+gulp.task('admin:strip', ['admin:minify'], function () {
     return gulp.src(config.admin.css.minifyFiles)
         .pipe(strip({ preserve: false }))
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
-gulp.task('concat', ['strip'], function () {
+gulp.task('admin:concat', ['admin:strip'], function () {
     return gulp.src(config.admin.css.minifyFiles)
         .pipe(concat('admin.css'))
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
+// app
+gulp.task('app:sass', function () {
+    return gulp
+        .src(config.css.sass.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(config.css.dest));
+});
+gulp.task('app:minify', ['app:sass'], function () {
+    return gulp.src(config.css.files)
+        .pipe(strip())
+        .pipe(cssnano())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(config.css.dest));
+});
 
-gulp.task('build', ['concat']);
+gulp.task('app:strip', ['app:minify'], function () {
+    return gulp.src(config.css.minifyFiles)
+        .pipe(strip({ preserve: false }))
+        .pipe(gulp.dest(config.css.dest));
+});
+
+gulp.task('app:concat', ['app:strip'], function () {
+    return gulp.src(config.css.minifyFiles)
+        .pipe(concat('app.css'))
+        .pipe(gulp.dest(config.css.dest));
+});
+
+gulp.task('build', ['admin:concat','app:concat']);
 
 gulp.task('default',['build']);
