@@ -55,6 +55,7 @@ gulp.task('admin:minify',['admin:sass'], function () {
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
+// admin
 gulp.task('admin:strip', ['admin:minify'], function () {
     return gulp.src(config.admin.css.minifyFiles)
         .pipe(strip({ preserve: false }))
@@ -95,10 +96,12 @@ gulp.task('app:concat', ['app:strip'], function () {
         .pipe(gulp.dest(config.css.dest));
 });
 
+// global
 gulp.task('watch', function () {
     gulp.watch(config.css.sass.src, ['build']);
     gulp.watch(config.admin.css.sass.src, ['build']);
 });
+
 gulp.task('build', ['admin:concat','app:concat']);
 
 gulp.task('default',['build']);

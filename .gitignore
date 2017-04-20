@@ -264,3 +264,4 @@ paket-files/
 /BooksNet/Content/app.css
 /BooksNet/Content/app.min.css
 
+/BooksNet/Content/*.css
