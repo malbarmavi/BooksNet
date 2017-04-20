@@ -260,3 +260,7 @@ paket-files/
 /BooksNet/App_Data/BooksFiles/*.jpg
 /BooksNet/App_Data/BooksFiles/*.png
 
+/BooksNet/Content/books-app.css
+/BooksNet/Content/app.css
+/BooksNet/Content/app.min.css
+
