@@ -17,7 +17,7 @@ namespace BooksNet.Areas.Admin.Controllers
 
     public async Task<ActionResult> Index()
     {
-      var books = db.Books.Include(b => b.Publisher);
+      var books = db.Books.Include(b => b.Publisher).Include(b => b.Authors);
       return View(await books.ToListAsync());
     }
 
