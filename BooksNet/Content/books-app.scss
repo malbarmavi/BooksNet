@@ -12,7 +12,6 @@ body {
 }
 
 footer {
-   
     position: absolute;
     right: 0;
     bottom: 0;
@@ -20,18 +19,34 @@ footer {
     padding: 10pt 0 5pt 0;
 }
 
-.navbar, .navbar.navbar-default {
+.navbar, .navbar.navbar-default, .navbar .btn {
     background-color: #fff;
-    color: #000
+    color: #000 !important
 }
+
+
+.navbar-transparent.navbar, .navbar.navbar-default, .navbar-transparent .btn {
+    color: #fff !important
+}
+
 
 .container-fluid {
     padding: 0;
 }
 
 $header-main-color: #9a9a9a;
-.index-page .header-filter:after {
-    background: rgba($header-main-color,0.8);
-    background: linear-gradient(45deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
-    background: -webkit-linear-gradient(135deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
+
+.index-page {
+
+    .header-filter:after {
+        background: rgba($header-main-color,0.8);
+        background: linear-gradient(45deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
+        background: -webkit-linear-gradient(135deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
+    }
+
+    .brand {
+        h1 {
+            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+    }
 }
