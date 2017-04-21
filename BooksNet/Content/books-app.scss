@@ -4,7 +4,6 @@
 }
 
 body {
-    padding-top: 100px;
     padding-bottom: 85px;
     position: relative;
     width: 100%;
@@ -13,7 +12,7 @@ body {
 }
 
 footer {
-    border-top: 1px solid #ddd;
+   
     position: absolute;
     right: 0;
     bottom: 0;
@@ -24,4 +23,15 @@ footer {
 .navbar, .navbar.navbar-default {
     background-color: #fff;
     color: #000
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+$header-main-color: #9a9a9a;
+.index-page .header-filter:after {
+    background: rgba($header-main-color,0.8);
+    background: linear-gradient(45deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
+    background: -webkit-linear-gradient(135deg,rgba($header-main-color,0.8),rgba($header-main-color,0.4));
 }
