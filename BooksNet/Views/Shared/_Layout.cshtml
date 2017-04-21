@@ -8,12 +8,10 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/app.css?v=@AppSettings.Build" rel="stylesheet" />
 
     @RenderSection("styles", false)
-
 </head>
 <body>
     <div class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
@@ -33,37 +31,46 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                
-              
                     <li>
-                        <a rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-facebook-square"></i>
                         </a>
                     </li>
                     <li>
-                        <a rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-
-            
-
         </div>
     </div>
+
     <div class="container-fluid">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <p class="developer">&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                    <p class="text-right my-links">
+                        <span><a target="_blank" href="https://www.linkedin.com/in/mbarmawi" class="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>  </span>
+                        <span><a target="_blank" href="http://codepen.io/mbarmawi/" class="codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a>             </span>
+                        <span><a target="_blank" href="http://github.com/mbarmawi/" class="git"><i class="fa fa-github" aria-hidden="true"></i></a>                  </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

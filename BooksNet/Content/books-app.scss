@@ -11,19 +11,28 @@ body {
     min-height: 100%;
 }
 
-footer {
+footer{
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 10pt 0 5pt 0;
+    color: #000;
+    text-shadow: 0 1px 1px #fff;
+    font-size: 1.5rem;
+
+    .fa { 
+        color:#000;
+    }
+    .developer { 
+        font-weight:400;
+    }
 }
 
 .navbar, .navbar.navbar-default, .navbar .btn {
     background-color: #fff;
     color: #000 !important
 }
-
 
 .navbar-transparent.navbar, .navbar.navbar-default, .navbar-transparent .btn {
     color: #fff !important
@@ -35,7 +44,6 @@ footer {
 }
 
 $header-main-color: #9a9a9a;
-
 .index-page {
 
     .header-filter:after {
