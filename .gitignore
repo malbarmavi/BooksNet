@@ -265,3 +265,9 @@ paket-files/
 /BooksNet/Content/app.min.css
 
 /BooksNet/Content/*.css
+/BooksNet/Scripts/*.js
+/BooksNet/Scripts/*.css
+/BooksNet/Scripts/*.json
+/BooksNet/Scripts/*.map
+/BooksNet/Scripts/**/*.js
+
