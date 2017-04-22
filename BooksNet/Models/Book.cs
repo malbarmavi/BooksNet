@@ -52,5 +52,9 @@ namespace BooksNet.Models
 
     [MaxLength(500)]
     public string Descriptions { get; set; }
+
+    public int Views { get; set; }
+
+    public int Downloads { get; set; }
   }
 }
