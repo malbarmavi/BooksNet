@@ -10,7 +10,7 @@ namespace BooksNet.Areas.Api.Controllers
 
     public IQueryable<Book> GetLatestUpload()
     {
-      return db.Books.OrderByDescending(b => b.Id).Take(20);
+      return db.Books.OrderByDescending(b => b.Id).Take(8);
     }
 
     protected override void Dispose(bool disposing)

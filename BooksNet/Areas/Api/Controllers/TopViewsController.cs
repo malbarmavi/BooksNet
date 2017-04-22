@@ -10,7 +10,7 @@ namespace BooksNet.Areas.Api.Controllers
 
     public IQueryable<Book> Get()
     {
-      return db.Books.OrderByDescending(b => b.Views).Take(20);
+      return db.Books.OrderByDescending(b => b.Views).Take(4);
     }
 
     protected override void Dispose(bool disposing)
