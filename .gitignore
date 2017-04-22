@@ -271,3 +271,4 @@ paket-files/
 /BooksNet/Scripts/*.map
 /BooksNet/Scripts/**/*.js
 
+/BooksNet/App_Data/BooksCoverImage/*.jpg
