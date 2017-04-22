@@ -199,6 +199,8 @@
     <Compile Include="Areas\Admin\ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
+    <Compile Include="Areas\Api\Controllers\LatestUploadController.cs" />
+    <Compile Include="Areas\Api\Controllers\TopViewsController.cs" />
     <Compile Include="Areas\Api\WebApiConfig.cs" />
     <Compile Include="Areas\Api\Controllers\BooksController.cs" />
     <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
@@ -254,6 +256,10 @@
     <Compile Include="Migrations\201704091405007_AddCoverImageToBookModel.cs" />
     <Compile Include="Migrations\201704091405007_AddCoverImageToBookModel.Designer.cs">
       <DependentUpon>201704091405007_AddCoverImageToBookModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704221500175_AddStatisticFieldsToBookModel.cs" />
+    <Compile Include="Migrations\201704221500175_AddStatisticFieldsToBookModel.Designer.cs">
+      <DependentUpon>201704221500175_AddStatisticFieldsToBookModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1143,8 +1149,9 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\BooksCoverImage\" />
-    <Folder Include="App_Data\BooksFiles\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Resources\BooksCoverImage\" />
+    <Folder Include="Resources\BooksFiles\" />
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
   <ItemGroup>
@@ -1194,6 +1201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704091405007_AddCoverImageToBookModel.resx">
       <DependentUpon>201704091405007_AddCoverImageToBookModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704221500175_AddStatisticFieldsToBookModel.resx">
+      <DependentUpon>201704221500175_AddStatisticFieldsToBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
