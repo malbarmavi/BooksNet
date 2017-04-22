@@ -57,15 +57,7 @@ namespace BooksNet.Areas.Admin.Controllers
     {
       if (ModelState.IsValid)
       {
-        if (model.File.ContentLength > 0)
-        {
-          model.File.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksFiles"), Path.GetFileName(model.File.FileName))) ;
-        }
-
-        if (model.CoverImage?.ContentLength > 0)
-        {
-          model.CoverImage.SaveAs(Path.Combine(Server.MapPath("~/App_Data/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
-        }
+       
 
         Book book = new Book();
         book.Title = model.Title;
@@ -84,6 +76,17 @@ namespace BooksNet.Areas.Admin.Controllers
 
         db.Books.Add(book);
         await db.SaveChangesAsync();
+
+        if (model.File.ContentLength > 0)
+        {
+          model.File.SaveAs(Path.Combine(Server.MapPath("~/Resources/BooksFiles"), Path.GetFileName(model.File.FileName)));
+        }
+
+        if (model.CoverImage?.ContentLength > 0)
+        {
+          model.CoverImage.SaveAs(Path.Combine(Server.MapPath("~/Resources/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
+        }
+
         return RedirectToAction("Index");
       }
 
