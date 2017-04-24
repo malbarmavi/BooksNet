@@ -22,5 +22,12 @@ namespace BooksNet.Controllers
 
       return View();
     }
+
+    public ActionResult Books()
+    {
+      ViewBag.Message = "Your contact page.";
+
+      return View();
+    }
   }
 }
