@@ -60,8 +60,12 @@ $header-main-color: #9a9a9a;
 }
 
 .books {
-    > div {
+    > div.col-md-3 {
         padding: 10px;
+    }
+
+    div.col-md-4 {
+        padding: 0 15px 10px 0;
     }
 
     .book {
@@ -124,3 +128,47 @@ $header-main-color: #9a9a9a;
         }
     }
 }
+
+.books-search {
+    .wrapper > .header {
+        height: 60vh;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .panel {
+        border-radius: 3px;
+        color: rgba(0,0,0,.87);
+        background: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+        overflow: hidden;
+
+        .panel-heading {
+            h3 {
+                margin: 0
+            }
+        }
+
+        .panel-body {
+            .form-group.is-focused .form-control {
+                outline: none;
+                background-image: linear-gradient(rgba(0,0,0,0.2),#9a9a9a),linear-gradient(#d2d2d2,#d2d2d2);
+                background-size: 100% 2px,100% 1px;
+                box-shadow: none;
+                transition-duration: .3s
+            }
+
+            .form-group.is-focused .form-control .material-input:after {
+                background-color: #9a9a9a
+            }
+
+            .form-group.is-focused label, .form-group.is-focused label.control-label {
+                color: #9a9a9a
+            }
+        }
+    }
+}
+
+

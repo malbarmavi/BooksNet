@@ -1,9 +1,14 @@
-﻿using System.Web.Mvc;
+﻿using BooksNet.Areas.Admin.ViewModels.Book;
+using BooksNet.Models;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace BooksNet.Controllers
 {
   public class HomeController : Controller
   {
+    private ApplicationDbContext db = new ApplicationDbContext();
+
     public ActionResult Index()
     {
       return View();
@@ -21,7 +26,17 @@ namespace BooksNet.Controllers
 
     public ActionResult Books()
     {
-      return View();
+      NewBookViewModel model = new NewBookViewModel();
+      var categories = db.Categories.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var publishers = db.Publishers.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var authours = db.Authours.Select(c => new { Id = c.Id, Name = c.FirstName }).ToList();
+
+      model.Category = new SelectList(categories, "Id", "Name");
+      model.Categories = new MultiSelectList(categories, "Id", "Name");
+      model.Authors = new MultiSelectList(authours, "Id", "Name");
+      model.Publisher = new SelectList(publishers, "Id", "Name");
+
+      return View(model);
     }
   }
 }
