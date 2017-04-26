@@ -199,6 +199,7 @@
     <Compile Include="Areas\Admin\ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users\UserViewModel.cs" />
+    <Compile Include="Areas\Api\Controllers\BooksSearchController.cs" />
     <Compile Include="Areas\Api\Controllers\LatestUploadController.cs" />
     <Compile Include="Areas\Api\Controllers\TopViewsController.cs" />
     <Compile Include="Areas\Api\WebApiConfig.cs" />
@@ -267,6 +268,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BooksSearchData.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
