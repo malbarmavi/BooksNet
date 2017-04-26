@@ -26,7 +26,7 @@ const config = {
     },
     css: {
         dest: 'content',
-        files: ['content/material-kit.css', 'content/books-app.css'],
+        files: ['content/material-kit.css','content/chosen.css', 'content/books-app.css'],
         minifyFiles: ['content/material-kit.min.css', 'content/books-app.min.css'],
         sass: {
             src: 'content/*.scss'
