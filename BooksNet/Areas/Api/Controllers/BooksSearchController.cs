@@ -32,12 +32,12 @@ namespace BooksNet.Areas.Api.Controllers
 
       if (searchData.Categories != null)
       {
-        result = result.Where(b => b.Categories.Where(c => searchData.Categories.Contains(c.Id)).Any());
+        result = result.Where(b => b.Categories.Any(c => searchData.Categories.Contains(c.Id)));
       }
 
       if (searchData.Authors != null)
       {
-        result = result.Where(b => b.Authors.Where(a => searchData.Authors.Contains(a.Id)).Any());
+        result = result.Where(b => b.Authors.Any(a => searchData.Authors.Contains(a.Id)));
       }
 
       if (searchData.Publisher != 0)
