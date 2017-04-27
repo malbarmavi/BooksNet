@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group ">
                                     @Html.LabelFor(model => model.Category, new { @class = "control-label" })
-                                    @Html.DropDownListFor(model => model.CategoryId, Model.Category, new { @class = "form-control selectpicker dropdown-header", ng_model = "category" })
+                                    @Html.DropDownListFor(model => model.CategoryId, Model.Category, "Unselected...", new { @class = "form-control selectpicker dropdown-header", ng_model = "category" })
                                 </div>
                                 <div class="form-group ">
                                     @Html.LabelFor(model => model.Categories, new { @class = "control-label" })
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Publisher, new { @class = "control-label" })
-                                    @Html.DropDownListFor(model => model.PublisherId, Model.Publisher, new { @class = "form-control selectpicker dropdown-header", ng_model = "publisher" })
+                                    @Html.DropDownListFor(model => model.PublisherId, Model.Publisher, "Unselected...", new { @class = "form-control selectpicker dropdown-header", ng_model = "publisher" })
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Authors, new { @class = "control-label" })
@@ -97,6 +97,9 @@
 
         $(function () {
             $('select').chosen({ width: '100%', disable_search_threshold: 10, no_results_text: "...." });
+            $('.chosen-container').click(function () {
+                $("select").trigger("chosen:updated");
+            });
         });
 
         var app = angular.module('booksSearch', []);
@@ -120,27 +123,18 @@
 
             getSearchData = function (scope) {
                 return {
-                    title: scope.title, 
-                    age: scope.age, 
-                    category: scope.category, 
-                    categories: scope.categoryList, 
-                    publisher: scope.publisher, 
-                    authors: scope.authorList, 
-                    print: scope.print, 
+                    title: scope.title,
+                    age: scope.age,
+                    category: scope.category,
+                    categories: scope.categoryList,
+                    publisher: scope.publisher,
+                    authors: scope.authorList,
+                    print: scope.print,
                     printDate: scope.printDate
                 }
             }
 
             $scope.search = function () {
-                //console.log($scope.title);
-                //console.log($scope.age);
-                //console.log($scope.category);
-                //console.log($scope.categoryList);
-                //console.log($scope.publisher);
-                //console.log($scope.author);
-                //console.log($scope.print);
-                //console.log($scope.printDate);
-                
                 $http({ method: 'GET', url: '/Api/BooksSearch', params: getSearchData($scope) }).then(
                     function (responde) {
                         $scope.booksResult = responde.data;
