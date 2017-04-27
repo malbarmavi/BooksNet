@@ -334,22 +334,6 @@
     <Content Include="Areas\Admin\Views\Books\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Books\Index.cshtml" />
     <Content Include="Content\books-app.scss" />
-    <Content Include="Resources\BooksCoverImage\1.jpg" />
-    <Content Include="Resources\BooksCoverImage\10.jpg" />
-    <Content Include="Resources\BooksCoverImage\11.jpg" />
-    <Content Include="Resources\BooksCoverImage\12.jpg" />
-    <Content Include="Resources\BooksCoverImage\13.jpg" />
-    <Content Include="Resources\BooksCoverImage\14.jpg" />
-    <Content Include="Resources\BooksCoverImage\15.jpg" />
-    <Content Include="Resources\BooksCoverImage\16.jpg" />
-    <Content Include="Resources\BooksCoverImage\2.jpg" />
-    <Content Include="Resources\BooksCoverImage\3.jpg" />
-    <Content Include="Resources\BooksCoverImage\4.jpg" />
-    <Content Include="Resources\BooksCoverImage\5.jpg" />
-    <Content Include="Resources\BooksCoverImage\6.jpg" />
-    <Content Include="Resources\BooksCoverImage\7.jpg" />
-    <Content Include="Resources\BooksCoverImage\8.jpg" />
-    <Content Include="Resources\BooksCoverImage\9.jpg" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -411,6 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Resources\BooksCoverImage\" />
     <Folder Include="Resources\BooksFiles\" />
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
