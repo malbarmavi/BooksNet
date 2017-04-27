@@ -204,6 +204,7 @@
     <Compile Include="Areas\Api\Controllers\TopViewsController.cs" />
     <Compile Include="Areas\Api\WebApiConfig.cs" />
     <Compile Include="Areas\Api\Controllers\BooksController.cs" />
+    <Compile Include="Attributes\AjaxOnlyAttribute.cs" />
     <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
