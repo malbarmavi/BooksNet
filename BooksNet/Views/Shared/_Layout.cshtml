@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="booksNet" data-ng-app="booksNet">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/chosen.min.css" rel="stylesheet" />
+
     <link href="~/Content/app.css?v=@AppSettings.Build" rel="stylesheet" />
 
     @RenderSection("styles", false)
@@ -27,10 +29,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Books", "Books", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Books">Books</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                    <li><a href="/About">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs" >
                     <li>
@@ -78,8 +80,12 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
     <script src="~/Scripts/material.min.js"></script>
     <script src="~/Scripts/material-kit.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>

@@ -1,4 +1,5 @@
 ﻿using BooksNet.Areas.Admin.ViewModels.Book;
+using BooksNet.Attributes;
 using BooksNet.Models;
 using System.Linq;
 using System.Web.Mvc;
@@ -14,15 +15,18 @@ namespace BooksNet.Controllers
       return View();
     }
 
+
     public ActionResult About()
     {
       return View();
     }
 
+
     public ActionResult Contact()
     {
       return View();
     }
+
 
     public ActionResult Books()
     {
@@ -37,6 +41,12 @@ namespace BooksNet.Controllers
       model.Publisher = new SelectList(publishers, "Id", "Name");
 
       return View(model);
+    }
+
+  
+    public ActionResult Main ()
+    {
+      return View();
     }
   }
 }

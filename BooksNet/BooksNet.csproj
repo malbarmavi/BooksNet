@@ -342,6 +342,7 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />
@@ -358,6 +359,7 @@
     <Content Include="Scripts\material-kit.js" />
     <Content Include="Scripts\material.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

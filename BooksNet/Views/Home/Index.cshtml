@@ -1,8 +1,9 @@
 ﻿@{
   ViewBag.Title = "Home Page";
+  Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="index-page" ng-app="booksIndex">
+<div class="index-page">
 
     <div class="wrapper">
         <div class="header header-filter" style="background-image: url('/Content/images/books.jpeg');">
@@ -20,82 +21,8 @@
 
         <div class="main main-raised">
             <div class="section section-basic">
-                <div class="container">
-                    <div class="title">
-                        <h2>Latest Upload </h2>
-                    </div>
-
-                    <div class="row books" ng-controller="latesUpload">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="b in latesUploadBooks">
-                            <div class="book">
-                                <div class="cover">
-                                    <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                                </div>
-                                <div class="title">
-                                    <h3>{{b.Title | maxLength}}</h3>
-                                </div>
-                                <div class="overlay">
-                                    <h3>{{b.Title}}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-70"></div>
-                    <div class="title">
-                        <h2>Top Views </h2>
-                    </div>
-
-                    <div class="row books" ng-controller="topViews">
-                        <div class="col-sm-6 col-md-3" ng-repeat="b in topViews">
-                            <div class="book">
-                                <div class="cover">
-                                    <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                                </div>
-                                <div class="title">
-                                    <h3>{{b.Title | maxLength}}</h3>
-                                </div>
-                                <div class="overlay">
-                                    <h3>{{b.Title}}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div ng-view></div>
             </div>
         </div>
     </div>
 </div>
-
-@section scripts {
-    <script src="~/Scripts/angular.min.js"></script>
-    <script>
-        var app = angular.module('booksIndex', []);
-
-        app.filter('maxLength', function () {
-            return function (s) {
-                return s.length > 20 ? s.slice(0, 17) + '...' : s;
-            }
-        });
-
-        app.controller('latesUpload', ['$scope', '$http', function ($scope, $http) {
-            $scope.latesUploadBooks = [];
-            $http({ method: 'GET', url: '/Api/LatestUpload' }).then(
-                function (responde) {
-                    $scope.latesUploadBooks = responde.data;
-                }, function () {
-                    console.log(responde); console.log('error');
-                });
-
-        }]);
-
-        app.controller('topViews', ['$scope', '$http', function ($scope, $http) {
-            $scope.topViews = [];
-            $http({ method: 'GET', url: '/Api/TopViews' }).then(function (responde) {
-                $scope.topViews = responde.data;
-            }, function () {
-                console.log(responde); console.log('error');
-            });
-        }]);
-    </script>
-}
