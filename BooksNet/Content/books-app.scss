@@ -138,11 +138,13 @@ $header-main-color: #9a9a9a;
     }
 }
 
-.books-search {
+.background-size-small {
     .wrapper > .header {
         height: 60vh;
     }
-
+}
+.books-search {
+    
     .row {
         margin: 0;
     }
@@ -178,5 +180,3 @@ $header-main-color: #9a9a9a;
         }
     }
 }
-
-

@@ -1,6 +1,6 @@
 ﻿function init() {
     $('select').chosen({ width: '100%', disable_search_threshold: 10, no_results_text: "...." });
-    $('.chosen-container').click(function () {
+    $('.chosen-books').click(function () {
         $("select").trigger("chosen:updated");
     });
 }
@@ -24,20 +24,47 @@ app.filter('maxLength', function () {
     }
 });
 
-app.controller('about', ['$scope', '$http', function ($scope, $http) {
-
-
-}]);
-
-app.controller('contact', ['$scope', '$http', function ($scope, $http) {
-
+app.controller('main', ['$scope', function ($scope) {
+    $scope.title = "";
+    $scope.backgroundSize = false;
+    $scope.books = false;
 
 }]);
+
 app.controller('index', ['$scope', '$http', function ($scope, $http) {
+    $scope.$parent.title = "Home";
+    $scope.$parent.backgroundSize = false;
+    $scope.$parent.books = false;
 
 
 }]);
+
+app.controller('latesUpload', ['$scope', '$http', function ($scope, $http) {
+    $scope.latesUploadBooks = [];
+    $http({ method: 'GET', url: '/Api/LatestUpload' }).then(
+        function (responde) {
+            $scope.latesUploadBooks = responde.data;
+        }, function () {
+            console.log(responde); console.log('error');
+        });
+
+}]);
+
+app.controller('topViews', ['$scope', '$http', function ($scope, $http) {
+    $scope.topViews = [];
+    $http({ method: 'GET', url: '/Api/TopViews' }).then(function (responde) {
+        $scope.topViews = responde.data;
+    }, function () {
+        console.log(responde); console.log('error');
+    });
+}]);
+
+
 app.controller('books', ['$scope', '$http', function ($scope, $http) {
+    $scope.$parent.title = "Books";
+    $scope.$parent.backgroundSize = true;
+    $scope.$parent.books = true;
+
     $scope.booksResult = [];
     init();
     $http({ method: 'GET', url: '/Api/BooksSearch' }).then(
@@ -71,22 +98,19 @@ app.controller('books', ['$scope', '$http', function ($scope, $http) {
 }]);
 
 
-app.controller('latesUpload', ['$scope', '$http', function ($scope, $http) {
-    $scope.latesUploadBooks = [];
-    $http({ method: 'GET', url: '/Api/LatestUpload' }).then(
-        function (responde) {
-            $scope.latesUploadBooks = responde.data;
-        }, function () {
-            console.log(responde); console.log('error');
-        });
+
+app.controller('about', ['$scope', '$http', function ($scope, $http) {
+    $scope.$parent.title = "About";
+    $scope.$parent.backgroundSize = true;
+    $scope.$parent.books = false;
+
 
 }]);
 
-app.controller('topViews', ['$scope', '$http', function ($scope, $http) {
-    $scope.topViews = [];
-    $http({ method: 'GET', url: '/Api/TopViews' }).then(function (responde) {
-        $scope.topViews = responde.data;
-    }, function () {
-        console.log(responde); console.log('error');
-    });
+app.controller('contact', ['$scope', '$http', function ($scope, $http) {
+    $scope.$parent.title = "Contact";
+    $scope.$parent.backgroundSize = true;
+    $scope.$parent.books = false;
+
+
 }]);
