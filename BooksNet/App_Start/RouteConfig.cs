@@ -10,9 +10,27 @@ namespace BooksNet
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
       routes.MapRoute(
-          name: "Default",
-          url: "{controller}/{action}/{id}",
-          defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+        name: "Books",
+        url: "Books/{*catchall}",
+        defaults: new { controller = "Home", action = "Index" }
+      );
+
+      routes.MapRoute(
+        name: "Content",
+        url: "Content/{*catchall}",
+        defaults: new { controller = "Home", action = "Index" }
+      );
+
+      routes.MapRoute(
+        name: "About",
+        url: "About/{*catchall}",
+        defaults: new { controller = "Home", action = "Index" }
+      );
+
+      routes.MapRoute(
+        name: "Default",
+        url: "{controller}/{action}/{id}",
+        defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
     }
   }
