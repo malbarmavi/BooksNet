@@ -1,5 +1,4 @@
 ﻿<div class="row books no-padding" ng-controller="bookDetails">
-
     <div class="col-md-12">
         <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
             <div class="book">
@@ -9,40 +8,39 @@
                 <div class="title">
                     <h3>{{book.Title | maxLength}}</h3>
                 </div>
-                <div class="overlay">
-                    <h3>{{book.Title}}</h3>
-                </div>
             </div>
+            <a class="btn btn-info btn-block hidden-xs" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+                <i class="material-icons">file_download</i> Download
+            </a>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-7 col-xs-12">
             <div class="form-group">
                 <label>Title</label>
-                <label class="form-control">{{book.Title}}</label>
+                <label class="form-control"><b>{{book.Title}}</b></label>
             </div>
 
             <div class="form-group">
                 <label>Publisher</label>
                 <label class="form-control">{{book.Publisher}}</label>
             </div>
-
             <div class="form-group">
                 <label>Authors</label>
-                <label class="form-control">{{book.Authors}}</label>
+                <div>
+                    <span class="btn btn-white btn-round" ng-repeat="author in book.Authors"><b>{{author.Name}}</b></span>
+                </div>
             </div>
-
-            <div class="form-group">
+            <div class="form-group" ng-class="{'display-none':!book.PagesNumber}">
                 <label>PagesNumber</label>
                 <label class="form-control">{{book.PagesNumber}}</label>
             </div>
-        </div>
-        <div class="col-md-12" ng-class="{'display-none':!book.Description}">
-            <div class="form-group">
+
+            <div class="form-group" ng-class="{'display-none':!book.Description}">
                 <label>Description</label>
                 <label>{{book.Description}}</label>
             </div>
         </div>
-        <div class="col-md-12 text-center">
-            <a class="btn btn-info" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+        <div class="col-xs-12 visible-xs">
+            <a class="btn btn-info btn-block" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
                 <i class="material-icons">file_download</i> Download
             </a>
         </div>
