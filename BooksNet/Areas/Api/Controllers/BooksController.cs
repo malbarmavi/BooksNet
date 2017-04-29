@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Data.Entity;
 
 namespace BooksNet.Areas.Api.Controllers
 {
@@ -18,13 +19,25 @@ namespace BooksNet.Areas.Api.Controllers
     [ResponseType(typeof(Book))]
     public async Task<IHttpActionResult> GetBook(int id)
     {
-      Book book = await db.Books.FindAsync(id);
+      Book book = await db.Books.Include(b => b.Publisher).Include(b=> b.Authors).FirstAsync(b => b.Id == id);
       if (book == null)
       {
         return NotFound();
       }
 
-      return Ok(book);
+      var result = new {
+        Title = book.Title,
+        Description = book.Descriptions,
+        PagesNumber = book.PagesNumber,
+        Authors = book.Authors.Select(a => new { Name = $"{a.FirstName} {a.LastName}" }).ToArray(),
+        Publisher = book.Publisher.Name,
+        Downloads = book.Downloads,
+        Views = book.Views,
+        CoverImageName = book.CoverImageName,
+        FileName = book.FileName
+      };
+
+      return Ok(result);
     }
 
     private bool BookExists(int id)

@@ -9,6 +9,7 @@ var app = angular.module('booksNet', ['ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider.when('/Home', { templateUrl: '/Home/Main', controller: 'index' });
         $routeProvider.when('/Books', { templateUrl: '/Home/Books', controller: 'books' });
+        $routeProvider.when('/Books/Details/:bookId', { templateUrl: '/Home/bookDetails', controller: 'bookDetails' });
         $routeProvider.when('/Contact', { templateUrl: '/Home/Contact', controller: 'contact' });
         $routeProvider.when('/About', { templateUrl: '/Home/About', controller: 'about' });
         $routeProvider.otherwise({ redirectTo: '/Home' });
@@ -20,7 +21,12 @@ var app = angular.module('booksNet', ['ngRoute'])
 
 app.filter('maxLength', function () {
     return function (s) {
-        return s.length > 20 ? s.slice(0, 17) + '...' : s;
+        if (s) {
+            return s.length > 20 ? s.slice(0, 17) + '...' : s;
+        } else 
+        {
+            return s;
+        }
     }
 });
 
@@ -97,6 +103,19 @@ app.controller('books', ['$scope', '$http', function ($scope, $http) {
     }
 }]);
 
+app.controller('bookDetails', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    $scope.$parent.title = "Books";
+    $scope.$parent.backgroundSize = true;
+    $scope.$parent.books = true;
+ 
+ 
+    $http({ method: 'GET', url: '/Api/Books/' + $routeParams.bookId }).then(
+        function (responde) {
+            $scope.book = responde.data;
+        }, function () {
+            console.log(responde); console.log('error');
+        });
+}]);
 
 
 app.controller('about', ['$scope', '$http', function ($scope, $http) {

@@ -60,6 +60,7 @@ namespace BooksNet.Areas.Api.Controllers
       foreach (Book b in result.ToList())
       {
         finalResult.Add(new Book() {
+          Id=b.Id,
           Title = b.Title,
           CoverImageName = b.CoverImageName , 
           FileName = b.FileName,

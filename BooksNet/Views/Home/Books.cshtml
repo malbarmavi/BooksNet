@@ -1,6 +1,6 @@
 ﻿@model BooksNet.Areas.Admin.ViewModels.Book.NewBookViewModel
 
-<div class="row books no-padding" ng-controller="search">
+<div class="row books no-padding" ng-controller="books">
     <div class="col-md-3">
         <div class="panel panel-default ">
             <div class="panel-heading">
@@ -52,15 +52,17 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="b in booksResult">
             <div class="book">
-                <div class="cover">
-                    <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                </div>
-                <div class="title">
-                    <h3>{{b.Title | maxLength}}</h3>
-                </div>
-                <div class="overlay">
-                    <h3>{{b.Title}}</h3>
-                </div>
+                <a href="/Books/Details/{{b.Id}}">
+                    <div class="cover">
+                        <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
+                    </div>
+                    <div class="title">
+                        <h3>{{b.Title | maxLength}}</h3>
+                    </div>
+                    <div class="overlay">
+                        <h3>{{b.Title}}</h3>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

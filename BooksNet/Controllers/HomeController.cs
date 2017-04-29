@@ -1,5 +1,4 @@
 ﻿using BooksNet.Areas.Admin.ViewModels.Book;
-using BooksNet.Attributes;
 using BooksNet.Models;
 using System.Linq;
 using System.Web.Mvc;
@@ -15,18 +14,15 @@ namespace BooksNet.Controllers
       return View();
     }
 
-
     public ActionResult About()
     {
       return View();
     }
 
-
     public ActionResult Contact()
     {
       return View();
     }
-
 
     public ActionResult Books()
     {
@@ -43,8 +39,12 @@ namespace BooksNet.Controllers
       return View(model);
     }
 
-  
     public ActionResult Main ()
+    {
+      return View();
+    }
+
+    public ActionResult BookDetails ()
     {
       return View();
     }
