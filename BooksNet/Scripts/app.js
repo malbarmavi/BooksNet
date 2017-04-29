@@ -76,7 +76,7 @@ app.controller('books', ['$scope', '$http', function ($scope, $http) {
 
     getSearchData = function (scope) {
         return {
-            title: scope.title,
+            title: scope.bookTitle,
             age: scope.age,
             category: scope.category,
             categories: scope.categoryList,
