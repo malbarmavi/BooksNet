@@ -31,6 +31,11 @@ const config = {
         sass: {
             src: 'content/*.scss'
         }
+    },
+    js: {
+        dest: 'scripts',
+        files: ['app.js','material-kit.min.js'],
+        minifyFiles: ['material.min.js', 'material-kit.js', 'angular.min.js','angular-route.min.js','app.min.js']
     }
 }
 
