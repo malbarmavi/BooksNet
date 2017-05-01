@@ -1,40 +1,46 @@
-﻿<div class="container" ng-controller="index">
-    <div class="title">
-        <h2>Latest Upload </h2>
-    </div>
+﻿<div class="index">
+    <div class="container-fluid" ng-controller="index">
+        <div class="title">
+            <h2>Latest Upload </h2>
+        </div>
 
-    <div class="row books" ng-controller="latesUpload">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="b in latesUploadBooks">
-            <div class="book">
-                <div class="cover">
-                    <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                </div>
-                <div class="title">
-                    <h3>{{b.Title | maxLength}}</h3>
-                </div>
-                <div class="overlay">
-                    <h3>{{b.Title}}</h3>
+        <div class="row books" ng-controller="latesUpload">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="b in latesUploadBooks">
+                <div class="book">
+                    <a href="/Books/Details/{{b.Id}}">
+                        <div class="cover">
+                            <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
+                        </div>
+                        <div class="title">
+                            <h3>{{b.Title | maxLength}}</h3>
+                        </div>
+                        <div class="overlay">
+                            <h3>{{b.Title}}</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="space-70"></div>
-    <div class="title">
-        <h2>Top Views </h2>
-    </div>
+        <div class="space-70"></div>
+        <div class="title">
+            <h2>Top Views </h2>
+        </div>
 
-    <div class="row books" ng-controller="topViews">
-        <div class="col-sm-6 col-md-3" ng-repeat="b in topViews">
-            <div class="book">
-                <div class="cover">
-                    <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                </div>
-                <div class="title">
-                    <h3>{{b.Title | maxLength}}</h3>
-                </div>
-                <div class="overlay">
-                    <h3>{{b.Title}}</h3>
+        <div class="row books" ng-controller="topViews">
+            <div class="col-sm-6 col-md-3" ng-repeat="b in topViews">
+                <div class="book">
+                    <a href="/Books/Details/{{b.Id}}">
+                        <div class="cover">
+                            <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
+                        </div>
+                        <div class="title">
+                            <h3>{{b.Title | maxLength}}</h3>
+                        </div>
+                        <div class="overlay">
+                            <h3>{{b.Title}}</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

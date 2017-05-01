@@ -143,8 +143,9 @@ $header-main-color: #9a9a9a;
         height: 60vh;
     }
 }
+
 .books-search {
-    
+
     .row {
         margin: 0;
     }
@@ -181,6 +182,12 @@ $header-main-color: #9a9a9a;
     }
 }
 
-.display-none { 
-    display:none;
+.display-none {
+    display: none;
+}
+
+.index {
+    .container-fluid {
+        padding: 0 30px;
+    }
 }
