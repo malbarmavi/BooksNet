@@ -8,7 +8,7 @@ namespace BooksNet.Areas.Api.Controllers
   {
     private ApplicationDbContext db = new ApplicationDbContext();
 
-    public IQueryable<Book> GetLatestUpload()
+    public IQueryable<Book> Get()
     {
       return db.Books.OrderByDescending(b => b.Id).Take(8);
     }
