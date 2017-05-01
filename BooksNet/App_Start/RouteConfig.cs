@@ -16,8 +16,8 @@ namespace BooksNet
       );
 
       routes.MapRoute(
-        name: "Content",
-        url: "Content/{*catchall}",
+        name: "Contact",
+        url: "Contact/{*catchall}",
         defaults: new { controller = "Home", action = "Index" }
       );
 
