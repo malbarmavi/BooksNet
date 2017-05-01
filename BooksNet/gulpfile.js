@@ -123,6 +123,6 @@ gulp.task('watch', function () {
     gulp.watch(config.admin.css.sass.src, ['build']);
 });
 
-gulp.task('build', ['admin:concat','app:concat','appjs']);
+gulp.task('build', ['admin:concat','app:concat']);
 
 gulp.task('default',['build']);
