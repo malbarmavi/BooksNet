@@ -9,7 +9,8 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const strip = require('gulp-strip-css-comments');
 const clean = require('gulp-clean');
-
+const uglify = require('gulp-uglify');
+const stripjs = require('gulp-strip-comments');
 
 const config = {
     admin: {
@@ -34,11 +35,12 @@ const config = {
     },
     js: {
         dest: 'scripts',
-        files: ['app.js','material-kit.min.js'],
-        minifyFiles: ['material.min.js', 'material-kit.js', 'angular.min.js','angular-route.min.js','app.min.js']
+        files: ['scripts/app.js','scripts/material-kit.js'],
+        minifyFiles: ['scripts/material.min.js', 'scripts/material-kit.min.js', 'scripts/angular.min.js', 'scripts/angular-route.min.js','scripts/app.min.js']
     }
 }
 
+// admin
 gulp.task('clean',function () {
     return gulp.src(config.admin.css.cleanFiles)
         .pipe(clean({ force: true }))
@@ -60,7 +62,6 @@ gulp.task('admin:minify',['admin:sass'], function () {
         .pipe(gulp.dest(config.admin.css.dest));
 });
 
-// admin
 gulp.task('admin:strip', ['admin:minify'], function () {
     return gulp.src(config.admin.css.minifyFiles)
         .pipe(strip({ preserve: false }))
@@ -99,6 +100,21 @@ gulp.task('app:concat', ['app:strip'], function () {
     return gulp.src(config.css.minifyFiles)
         .pipe(concat('app.css'))
         .pipe(gulp.dest(config.css.dest));
+}); 
+
+gulp.task('appjs:minify', function () {
+    return gulp.src(config.js.files)
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(config.js.dest));
+});
+
+
+gulp.task('appjs', ['appjs:minify'], function () {
+    return gulp.src(config.js.minifyFiles)
+        .pipe(stripjs())
+        .pipe(concat('build.js'))
+        .pipe(gulp.dest(config.js.dest));
 });
 
 // global
@@ -107,6 +123,6 @@ gulp.task('watch', function () {
     gulp.watch(config.admin.css.sass.src, ['build']);
 });
 
-gulp.task('build', ['admin:concat','app:concat']);
+gulp.task('build', ['admin:concat','app:concat','appjs']);
 
 gulp.task('default',['build']);
