@@ -32,14 +32,14 @@
     });
 
     app.controller('main', ['$scope', function ($scope) {
-        $scope.title = "";
+        $scope.title = "BooksNet - Home";
         $scope.backgroundSize = false;
         $scope.books = false;
 
     }]);
 
     app.controller('index', ['$scope', '$http', function ($scope, $http) {
-        $scope.$parent.title = "Home";
+        $scope.$parent.title = "BooksNet - Home";
         $scope.$parent.backgroundSize = false;
         $scope.$parent.books = false;
     }]);
@@ -65,7 +65,7 @@
 
 
     app.controller('books', ['$scope', '$http', function ($scope, $http) {
-        $scope.$parent.title = "Books";
+        $scope.$parent.title = "BooksNet - Books";
         $scope.$parent.backgroundSize = true;
         $scope.$parent.books = true;
         init();
@@ -102,7 +102,7 @@
     }]);
 
     app.controller('bookDetails', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
-        $scope.$parent.title = "Books";
+        $scope.$parent.title = "BooksNet - Books";
         $scope.$parent.backgroundSize = true;
         $scope.$parent.books = true;
 
@@ -116,13 +116,13 @@
 
 
     app.controller('about', ['$scope', '$http', function ($scope, $http) {
-        $scope.$parent.title = "About";
+        $scope.$parent.title = "BooksNet - About";
         $scope.$parent.backgroundSize = true;
         $scope.$parent.books = false;
     }]);
 
     app.controller('contact', ['$scope', '$http', function ($scope, $http) {
-        $scope.$parent.title = "Contact";
+        $scope.$parent.title = "BooksNet - Contact";
         $scope.$parent.backgroundSize = true;
         $scope.$parent.books = false;
     }]);
