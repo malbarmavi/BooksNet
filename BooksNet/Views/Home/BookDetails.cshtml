@@ -19,7 +19,7 @@
             </div>
 
             <div class="action-btn hidden-xs">
-                <a class="btn btn-info"   href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+                <a class="btn btn-info"   href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self" ng-click="updateDownloads()">
                     <i class="material-icons">file_download</i> ({{book.Downloads}})
                 </a>
                 <a class="btn btn-rose" href="{{'/Resources/BooksFiles/'+book.FileName}}" target="_blank">
@@ -56,7 +56,7 @@
     </div>
     <div class="col-xs-12">
         <div class="action-btn visible-xs">
-            <a class="btn btn-info" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+            <a class="btn btn-info" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self" ng-click="updateDownloads()">
                 <i class="material-icons">file_download</i> ({{book.Downloads}})
             </a>
             <a class="btn btn-rose" href="{{'/Resources/BooksFiles/'+book.FileName}}" target="_blank">

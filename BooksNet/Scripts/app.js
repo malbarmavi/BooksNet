@@ -112,6 +112,16 @@
             }, function () {
                 console.log(responde); console.log('error');
             });
+
+        $scope.updateDownloads = function () {
+            $scope.book.Downloads += 1;
+            $http({ method: 'PUT', url: '/Api/Books/' + $routeParams.bookId }).then(
+                function (responde) {
+                        
+                }, function () {
+                    console.log(responde); console.log('error');
+                });
+        }
     }]);
 
 
