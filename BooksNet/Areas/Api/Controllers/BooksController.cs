@@ -1,6 +1,7 @@
 ﻿using BooksNet.Models;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -19,7 +20,12 @@ namespace BooksNet.Areas.Api.Controllers
     [ResponseType(typeof(Book))]
     public async Task<IHttpActionResult> GetBook(int id)
     {
-      Book book = await db.Books.Include(b => b.Publisher).Include(b => b.Authors).Include(b => b.Categories).FirstAsync(b => b.Id == id);
+      Book book = await db.Books
+        .Include(b => b.Publisher)
+        .Include(b => b.Authors)
+        .Include(b => b.Categories)
+        .FirstAsync(b => b.Id == id);
+
       if (book == null)
       {
         return NotFound();
@@ -48,6 +54,25 @@ namespace BooksNet.Areas.Api.Controllers
     private bool BookExists(int id)
     {
       return db.Books.Count(e => e.Id == id) > 0;
+    }
+
+    [ResponseType(typeof(void))]
+    public async Task<IHttpActionResult> PutBookAsync(int id)
+    {
+      Book book = db.Books
+         .Include(b => b.Categories)
+         .Include(b => b.Authors)
+         .Include(b => b.Publisher)
+         .First(b => b.Id == id);
+
+      if (book != null)
+      {
+        book.Downloads += 1;
+        db.Entry(book).Property(b => b.Downloads).IsModified = true;
+        await db.SaveChangesAsync();
+      }
+
+      return StatusCode(HttpStatusCode.OK);
     }
 
     protected override void Dispose(bool disposing)
