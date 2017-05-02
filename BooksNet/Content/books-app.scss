@@ -140,7 +140,7 @@ $header-main-color: #9a9a9a;
 
 .background-size-small {
     .wrapper > .header {
-        height: 60vh;
+        height: 70vh;
     }
 }
 
@@ -195,4 +195,65 @@ $header-main-color: #9a9a9a;
 
 .breadcrumb { 
     background-color:transparent;
+}
+
+
+.btn.btn-rose, .btn.btn-rose:hover, .btn.btn-rose:focus, .btn.btn-rose:active, .btn.btn-rose.active, .btn.btn-rose:active:focus, .btn.btn-rose:active:hover, .btn.btn-rose.active:focus, .btn.btn-rose.active:hover, .open > .btn.btn-rose.dropdown-toggle, .open > .btn.btn-rose.dropdown-toggle:focus, .open > .btn.btn-rose.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose,
+.navbar .navbar-nav > li > a.btn.btn-rose:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose:active,
+.navbar .navbar-nav > li > a.btn.btn-rose.active,
+.navbar .navbar-nav > li > a.btn.btn-rose:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose.active:hover, .open > .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle:hover {
+    background-color: #e91e63;
+    color: #FFFFFF;
+}
+
+.btn.btn-rose:focus, .btn.btn-rose:active, .btn.btn-rose:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose:active,
+.navbar .navbar-nav > li > a.btn.btn-rose:hover {
+    box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+}
+
+.btn.btn-rose.disabled, .btn.btn-rose.disabled:hover, .btn.btn-rose.disabled:focus, .btn.btn-rose.disabled.focus, .btn.btn-rose.disabled:active, .btn.btn-rose.disabled.active, .btn.btn-rose:disabled, .btn.btn-rose:disabled:hover, .btn.btn-rose:disabled:focus, .btn.btn-rose:disabled.focus, .btn.btn-rose:disabled:active, .btn.btn-rose:disabled.active, .btn.btn-rose[disabled], .btn.btn-rose[disabled]:hover, .btn.btn-rose[disabled]:focus, .btn.btn-rose[disabled].focus, .btn.btn-rose[disabled]:active, .btn.btn-rose[disabled].active, fieldset[disabled] .btn.btn-rose, fieldset[disabled] .btn.btn-rose:hover, fieldset[disabled] .btn.btn-rose:focus, fieldset[disabled] .btn.btn-rose.focus, fieldset[disabled] .btn.btn-rose:active, fieldset[disabled] .btn.btn-rose.active,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled.focus,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled:active,
+.navbar .navbar-nav > li > a.btn.btn-rose.disabled.active,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled.focus,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled:active,
+.navbar .navbar-nav > li > a.btn.btn-rose:disabled.active,
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled],
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled]:hover,
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled]:focus,
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled].focus,
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled]:active,
+.navbar .navbar-nav > li > a.btn.btn-rose[disabled].active, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose:hover, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose:focus, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose.focus, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose:active, fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-rose.active {
+    box-shadow: none;
+}
+
+.btn.btn-rose.btn-simple,
+.navbar .navbar-nav > li > a.btn.btn-rose.btn-simple {
+    background-color: transparent;
+    color: #e91e63;
+    box-shadow: none;
+}
+
+
+.action-btn { 
+    text-align:center;
+    .btn {
+       width:49%;
+       margin-left:0;
+       margin-right:0;
+    }
 }

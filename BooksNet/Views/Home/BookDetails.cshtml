@@ -1,5 +1,4 @@
-﻿
-<div class="row books no-padding" ng-controller="bookDetails">
+﻿<div class="row books no-padding">
     <div class="row">
         <div class="col-md-12">
             <ol class="breadcrumb">
@@ -18,9 +17,16 @@
                     <h3>{{book.Title | maxLength}}</h3>
                 </div>
             </div>
-            <a class="btn btn-info btn-block hidden-xs" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
-                <i class="material-icons">file_download</i> Download
-            </a>
+
+            <div class="action-btn">
+                <a class="btn btn-info"   href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+                    <i class="material-icons">file_download</i> ({{book.Downloads}})
+                </a>
+
+                <a class="btn btn-rose" href="{{'/Resources/BooksFiles/'+book.FileName}}" target="_blank">
+                    <i class="material-icons">remove_red_eye</i> ({{book.Views}})
+                </a>
+            </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-7 col-xs-12">
             <div class="form-group">
@@ -47,11 +53,6 @@
                 <label>Description</label>
                 <label>{{book.Description}}</label>
             </div>
-        </div>
-        <div class="col-xs-12 visible-xs">
-            <a class="btn btn-info btn-block" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
-                <i class="material-icons">file_download</i> Download
-            </a>
         </div>
     </div>
 </div>
