@@ -1,9 +1,9 @@
 ﻿using BooksNet.Models;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Data.Entity;
 
 namespace BooksNet.Areas.Api.Controllers
 {
@@ -19,13 +19,18 @@ namespace BooksNet.Areas.Api.Controllers
     [ResponseType(typeof(Book))]
     public async Task<IHttpActionResult> GetBook(int id)
     {
-      Book book = await db.Books.Include(b => b.Publisher).Include(b=> b.Authors).FirstAsync(b => b.Id == id);
+      Book book = await db.Books.Include(b => b.Publisher).Include(b => b.Authors).Include(b => b.Categories).FirstAsync(b => b.Id == id);
       if (book == null)
       {
         return NotFound();
       }
 
-      var result = new {
+      book.Views += 1;
+      db.Entry(book).Property(b => b.Views).IsModified = true;
+      db.SaveChanges();
+
+      var result = new
+      {
         Title = book.Title,
         Description = book.Descriptions,
         PagesNumber = book.PagesNumber,
