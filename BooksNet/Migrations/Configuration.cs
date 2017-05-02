@@ -5,8 +5,8 @@ namespace BooksNet.Migrations
   using Microsoft.AspNet.Identity;
   using Microsoft.AspNet.Identity.EntityFramework;
   using System;
-  using System.Linq;
   using System.Data.Entity.Migrations;
+  using System.Linq;
 
   internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
   {
@@ -30,11 +30,9 @@ namespace BooksNet.Migrations
         }
       }
 
-      // create default admin user
-
+      // Create default admin user
       if (!context.Users.Any())
       {
-
         ApplicationUser admin = new ApplicationUser()
         {
           Email = "admin@booksnet.com",
@@ -51,6 +49,18 @@ namespace BooksNet.Migrations
         {
           userManager.AddToRole(admin.Id, Roles.Admin);
         }
+      }
+
+      // Add default profile 
+      if (!context.Profile.Any())
+      {
+        context.Profile.Add(new Profile()
+        {
+          Name= "Books Net",
+          Description= "Online library management system.",
+          Title="BooksNet"
+        });
+        context.SaveChanges();
       }
     }
   }
