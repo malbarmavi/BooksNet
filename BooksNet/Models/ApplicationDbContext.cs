@@ -13,6 +13,8 @@ namespace BooksNet.Models
 
     public DbSet<Category> Categories { get; set; }
 
+    public DbSet<Profile> Profile { get; set; }
+
     public ApplicationDbContext()
         : base("BooksNetDataBae", throwIfV1Schema: false)
     {
