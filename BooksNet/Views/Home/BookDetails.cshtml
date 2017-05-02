@@ -18,11 +18,10 @@
                 </div>
             </div>
 
-            <div class="action-btn">
+            <div class="action-btn hidden-xs">
                 <a class="btn btn-info"   href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
                     <i class="material-icons">file_download</i> ({{book.Downloads}})
                 </a>
-
                 <a class="btn btn-rose" href="{{'/Resources/BooksFiles/'+book.FileName}}" target="_blank">
                     <i class="material-icons">remove_red_eye</i> ({{book.Views}})
                 </a>
@@ -53,6 +52,16 @@
                 <label>Description</label>
                 <label>{{book.Description}}</label>
             </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="action-btn visible-xs">
+            <a class="btn btn-info" href="{{'/Resources/BooksFiles/'+book.FileName}}" download="{{book.FileName}}" target="_self">
+                <i class="material-icons">file_download</i> ({{book.Downloads}})
+            </a>
+            <a class="btn btn-rose" href="{{'/Resources/BooksFiles/'+book.FileName}}" target="_blank">
+                <i class="material-icons">remove_red_eye</i> ({{book.Views}})
+            </a>
         </div>
     </div>
 </div>
