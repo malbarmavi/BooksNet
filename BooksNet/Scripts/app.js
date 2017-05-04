@@ -9,10 +9,13 @@
     }
 
     var app = angular.module('booksNet', ['ngRoute'])
+        .run(['$http',function ($http) {
+            $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        }])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider.when('/Home', { templateUrl: '/Home/Main', controller: 'index' });
-            $routeProvider.when('/Books', { templateUrl: '/Home/Books', controller: 'books' });
-            $routeProvider.when('/Books/Details/:bookId', { templateUrl: '/Home/bookDetails', controller: 'bookDetails' });
+            $routeProvider.when('/Books', { templateUrl: '/Home/Books/', controller: 'books'});
+            $routeProvider.when('/Books/Details/:bookId', { templateUrl: '/Home/bookDetails', controller: 'bookDetails'});
             $routeProvider.when('/Contact', { templateUrl: '/Home/Contact', controller: 'contact' });
             $routeProvider.when('/About', { templateUrl: '/Home/About', controller: 'about' });
             $routeProvider.otherwise({ redirectTo: '/Home' });
