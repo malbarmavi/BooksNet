@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <!--
-    
+
  BooksNet is library managment system help to give a modern way to share pdf file.
 
- By     : Muhammad Khair Albarmawi 
+ By     : Muhammad Khair Albarmawi
  Site   : http://www.mbarmawi.com
  Email  : muhammadalbarmawi@outlook.com
  GitHub : http://github.com/mbarmawi
- 
+
  Copyright (c) @DateTime.Now.Year , Muhammad Khair Albarmawi
  All rights reserved.
 
@@ -37,8 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">@ProfileInfo.Title</a>
-               
+                <a class="navbar-brand" href="/">@ProfileMapper.Get().Title</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -47,22 +46,33 @@
                     <li><a href="/Contact">Contact</a></li>
                     <li><a href="/About">About</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs" >
+                <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                    @if (!String.IsNullOrEmpty(ProfileMapper.Get().Twitter))
+                    {
                     <li>
-                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="https://twitter.com/@ProfileMapper.Get().Twitter" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
+                    }
+
+                    @if (!String.IsNullOrEmpty(ProfileMapper.Get().Facebook))
+                    {
                     <li>
-                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="https://www.facebook.com/@ProfileMapper.Get().Facebook" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-facebook-square"></i>
                         </a>
                     </li>
+                    }
+
+                    @if (!String.IsNullOrEmpty(ProfileMapper.Get().Instagram))
+                    {
                     <li>
-                        <a href="#" target="_blank" class="btn btn-simple btn-just-icon">
+                        <a href="https://www.instagram.com/@ProfileMapper.Get().Instagram" target="_blank" class="btn btn-simple btn-just-icon">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
+                    }
                 </ul>
             </div>
         </div>

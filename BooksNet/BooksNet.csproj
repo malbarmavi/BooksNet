@@ -207,7 +207,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helper\ProfileInfo.cs" />
+    <Compile Include="Helper\ProfileMapper.cs" />
     <Compile Include="Migrations\201703090334271_Initial.cs" />
     <Compile Include="Migrations\201703090334271_Initial.Designer.cs">
       <DependentUpon>201703090334271_Initial.cs</DependentUpon>
