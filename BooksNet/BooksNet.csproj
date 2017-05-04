@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201705020827509_AddProfileModel.Designer.cs">
       <DependentUpon>201705020827509_AddProfileModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705040855433_AddSocialLinkToProfileModel.cs" />
+    <Compile Include="Migrations\201705040855433_AddSocialLinkToProfileModel.Designer.cs">
+      <DependentUpon>201705040855433_AddSocialLinkToProfileModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgeSet.cs" />
@@ -460,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705020827509_AddProfileModel.resx">
       <DependentUpon>201705020827509_AddProfileModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705040855433_AddSocialLinkToProfileModel.resx">
+      <DependentUpon>201705040855433_AddSocialLinkToProfileModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
