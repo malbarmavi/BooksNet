@@ -126,11 +126,29 @@
   <data name="AllAges" xml:space="preserve">
     <value>AllAges</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Authors</value>
+  </data>
   <data name="Books" xml:space="preserve">
     <value>Books</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
+  </data>
+  <data name="CoverImage" xml:space="preserve">
+    <value>CoverImage</value>
+  </data>
+  <data name="Descriptions" xml:space="preserve">
+    <value>Descriptions</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="FilterBy" xml:space="preserve">
     <value>Filter By</value>
@@ -140,6 +158,21 @@
   </data>
   <data name="LatestUpload" xml:space="preserve">
     <value>Latest Upload</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="PagesNumber" xml:space="preserve">
+    <value>PagesNumber</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="PrintDate" xml:space="preserve">
+    <value>Print Date</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Publisher</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
