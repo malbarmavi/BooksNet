@@ -181,6 +181,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Resource.ar-SY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.ar-SY.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -323,6 +333,11 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginLayout.cshtml" />
+    <EmbeddedResource Include="App_GlobalResources\Resource.ar-SY.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.ar-SY.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>GlobalResources</CustomToolNamespace>
+    </EmbeddedResource>
     <None Include="Areas\Admin\Content\app.scss" />
     <Content Include="Areas\Admin\Views\Error\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
@@ -433,6 +448,11 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>GlobalResources</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703090334271_Initial.resx">
       <DependentUpon>201703090334271_Initial.cs</DependentUpon>
     </EmbeddedResource>
