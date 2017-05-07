@@ -1,13 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using BooksNet.Areas.Admin.ViewModels.Book;
+using BooksNet.Helper;
+using BooksNet.Models;
+using System;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BooksNet.Models;
-using BooksNet.Areas.Admin.ViewModels.Book;
-using System.Collections.Generic;
-using System.IO;
 
 namespace BooksNet.Areas.Admin.Controllers
 {
@@ -57,8 +58,6 @@ namespace BooksNet.Areas.Admin.Controllers
     {
       if (ModelState.IsValid)
       {
-       
-
         Book book = new Book();
         book.Title = model.Title;
         book.Age = model.Age;
@@ -84,7 +83,8 @@ namespace BooksNet.Areas.Admin.Controllers
 
         if (model.CoverImage?.ContentLength > 0)
         {
-          model.CoverImage.SaveAs(Path.Combine(Server.MapPath("~/Resources/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName)));
+          string path = Path.Combine(Server.MapPath("~/Resources/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName));
+          OptimizeImages.SetCompressionLevel(new Bitmap(model.CoverImage.InputStream), path);
         }
 
         return RedirectToAction("Index");
