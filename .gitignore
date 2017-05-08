@@ -271,3 +271,4 @@ paket-files/
 /BooksNet/Resources/BooksCoverImage/*.jpg
 /BooksNet/Resources/BooksFiles/*.pdf
 
+/BooksNet/Resources/BooksCoverImage/*.png
