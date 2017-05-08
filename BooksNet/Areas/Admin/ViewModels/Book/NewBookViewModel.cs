@@ -48,7 +48,6 @@ namespace BooksNet.Areas.Admin.ViewModels.Book
     [Required]
     public int PublisherId { get; set; }
 
-    [Required]
     [Display(Name = nameof(File), ResourceType = typeof(GlobalResources.Resource))]
     public HttpPostedFileBase File { get; set; }
 

@@ -56,7 +56,7 @@ namespace BooksNet.Areas.Admin.Controllers
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Create(NewBookViewModel model)
     {
-      if (ModelState.IsValid)
+      if (ModelState.IsValid && model.File !=null)
       {
         Book book = new Book();
         book.Title = model.Title;
@@ -102,33 +102,86 @@ namespace BooksNet.Areas.Admin.Controllers
       return View(model);
     }
 
-    public async Task<ActionResult> Edit(int? id)
+    public async Task<ActionResult> Edit(int id)
     {
-      if (id == null)
+      if (id == 0)
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      Book book = await db.Books.FindAsync(id);
+      Book book = await db.Books.Include(b => b.Authors).Include(b => b.Categories).FirstAsync(b => b.Id == id);
       if (book == null)
       {
         return HttpNotFound();
       }
-      ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name", book.PublisherId);
-      return View(book);
+      EditBookViewModel model = new EditBookViewModel();
+      var categories = db.Categories.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var publishers = db.Publishers.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
+      var authors = db.Authours.Select(c => new { Id = c.Id, Name = c.FirstName }).ToList();
+
+      model.Category = new SelectList(categories, "Id", "Name", book.CategoryId);
+      model.Categories = new MultiSelectList(categories, "Id", "Name", book.Categories.Select(c => c.Id).ToArray());
+      model.Authors = new MultiSelectList(authors, "Id", "Name", book.Authors.Select(c => c.Id).ToArray());
+      model.Publisher = new SelectList(publishers, "Id", "Name", book.PublisherId);
+
+      model.Title = book.Title;
+      model.Age = book.Age;
+      model.Descriptions = book.Descriptions;
+      model.CategoryId = book.CategoryId;
+      model.PublisherId = book.PublisherId;
+      model.Print = book.Print;
+      model.PrintDate = book.PrintDate;
+
+      return View(model);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Age,CategoryId,Print,PrintDate,Notes,PublisherId,FileName,CoverImageName,CreateDate,LastUpdate,PagesNumber,Version,Descriptions")] Book book)
+    public async Task<ActionResult> Edit(EditBookViewModel model)
     {
       if (ModelState.IsValid)
       {
+        Book book = await db.Books.Include(b => b.Authors).Include(b => b.Categories).FirstAsync(b => b.Id == model.Id);
+
+        book.Title = model.Title;
+        book.Age = model.Age;
+        book.Descriptions = model.Descriptions;
+        book.CategoryId = model.CategoryId;
+        book.Authors = db.Authours.Where(a => model.AuthorsId.Contains(a.Id)).ToList();
+        book.Categories = db.Categories.Where(c => model.CategoriesId.Contains(c.Id)).ToList();
+        book.PublisherId = model.PublisherId;
+        book.Print = model.Print;
+        book.PrintDate = model.PrintDate;
+
+        if (model.File?.ContentLength > 0)
+        {
+          book.FileName = model.File.FileName;
+        }
+
+        if (model.CoverImage?.ContentLength > 0)
+        {
+          book.CoverImageName = model.CoverImage?.FileName;
+        }
+
+        book.LastUpdate = DateTime.Now;
+
         db.Entry(book).State = EntityState.Modified;
         await db.SaveChangesAsync();
+
+        if (model.File?.ContentLength > 0)
+        {
+          model.File.SaveAs(Path.Combine(Server.MapPath("~/Resources/BooksFiles"), Path.GetFileName(model.File.FileName)));
+        }
+
+        if (model.CoverImage?.ContentLength > 0)
+        {
+          string path = Path.Combine(Server.MapPath("~/Resources/BooksCoverImage"), Path.GetFileName(model.CoverImage.FileName));
+          OptimizeImages.SetCompressionLevel(new Bitmap(model.CoverImage.InputStream), path);
+        }
+
         return RedirectToAction("Index");
       }
-      ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name", book.PublisherId);
-      return View(book);
+
+      return View(model);
     }
 
     public async Task<ActionResult> Delete(int? id)
