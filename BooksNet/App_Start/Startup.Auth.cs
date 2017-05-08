@@ -23,6 +23,7 @@ namespace BooksNet
       // Configure the sign in cookie
       app.UseCookieAuthentication(new CookieAuthenticationOptions
       {
+        ExpireTimeSpan = TimeSpan.FromMinutes(30), 
         AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
         LoginPath = new PathString("/Admin/Account/Login"),
         Provider = new CookieAuthenticationProvider
