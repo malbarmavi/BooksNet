@@ -182,6 +182,7 @@
     <Compile Include="Areas\Admin\Models\Roles.cs" />
     <Compile Include="Areas\Admin\ViewModels\Author\EditAuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Author\NewAuthorViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Book\EditBookViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Book\NewBookViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Publisher\EditPublisherViewModel.cs" />
