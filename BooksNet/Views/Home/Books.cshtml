@@ -1,6 +1,6 @@
 ﻿@model BooksNet.Areas.Admin.ViewModels.Book.NewBookViewModel
 
-<div class="row books no-padding" >
+<div class="row books no-padding">
     <div class="col-md-3">
         <div class="panel panel-default ">
             <div class="panel-heading">
@@ -46,25 +46,26 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 ">
         <div>
             <h3>We have found {{booksResult.length}} {{booksResult.length > 1 ? 'items' : 'item'}}.</h3>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="b in booksResult">
-            <div class="book">
-                <a href="/Books/Details/{{b.Id}}">
-                    <div class="cover">
-                        <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
-                    </div>
-                    <div class="title">
-                        <h3>{{b.Title | maxLength}}</h3>
-                    </div>
-                    <div class="overlay">
-                        <h3>{{b.Title}}</h3>
-                    </div>
-                </a>
+        <div class="books-items">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="b in booksResult">
+                <div class="book">
+                    <a href="/Books/Details/{{b.Id}}">
+                        <div class="cover">
+                            <img ng-src="{{'/Resources/BooksCoverImage/'+b.CoverImageName}}" alt="{{b.Title}}">
+                        </div>
+                        <div class="title">
+                            <h3>{{b.Title | maxLength}}</h3>
+                        </div>
+                        <div class="overlay">
+                            <h3>{{b.Title}}</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-

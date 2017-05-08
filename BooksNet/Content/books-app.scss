@@ -261,3 +261,10 @@ $header-main-color: #9a9a9a;
 .header-imgae { 
     background-image: url('/Content/images/books.jpeg');
 }
+
+div[dir=rtl] { 
+    text-align:right;
+    .books > div ,.books-items > div , .books-details > div{ 
+        float:right;
+    }
+}
