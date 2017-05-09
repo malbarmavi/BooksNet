@@ -88,6 +88,10 @@ $header-main-color: #9a9a9a;
         overflow: hidden;
         cursor: pointer;
 
+        a {
+            color: rgba(0,0,0,.87);
+        }
+
         .cover {
             overflow: hidden;
 
@@ -262,6 +266,15 @@ $header-main-color: #9a9a9a;
     background-image: url('/Content/images/books.jpeg');
 }
 
+/* rtl implementation */
+body[dir=rtl] {
+    font-family: 'Droid Arabic Naskh', serif;
+    .label-floating {
+        .control-label { 
+            right:0;
+        }
+    }
+}
 div[dir=rtl] { 
     text-align:right;
     .books > div ,.books-items > div , .books-details > div{ 
