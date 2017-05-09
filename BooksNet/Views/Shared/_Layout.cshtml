@@ -12,14 +12,19 @@
  All rights reserved.
 
 -->
-<html ng-app="booksNet" data-ng-app="booksNet" ng-controller="main" >
+<html ng-app="booksNet" data-ng-app="booksNet" ng-controller="main">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title ng-bind="title">BooksNet - Home</title>
-
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">
+    @if (Resource._lang == "English")
+    {
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    }
+    else
+    {
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">
+    }
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -88,7 +93,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <p class="developer">&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi
+                    <p class="developer text-left">&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                     <p class="text-right my-links">
