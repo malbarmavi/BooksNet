@@ -40,6 +40,8 @@ const config = {
     }
 }
 
+const cssSignature = "content/signature.css";
+
 // admin
 gulp.task('clean',function () {
     return gulp.src(config.admin.css.cleanFiles)
@@ -97,7 +99,8 @@ gulp.task('app:strip', ['app:minify'], function () {
 });
 
 gulp.task('app:concat', ['app:strip'], function () {
-    return gulp.src(config.css.minifyFiles)
+    var files = [].concat(cssSignature, config.css.minifyFiles);
+    return gulp.src(files)
         .pipe(concat('app.css'))
         .pipe(gulp.dest(config.css.dest));
 }); 
