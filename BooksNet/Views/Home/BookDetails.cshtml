@@ -1,8 +1,9 @@
-﻿<div class="row books no-padding">
+﻿@model BooksNet.Areas.Admin.ViewModels.Book.NewBookViewModel
+<div class="row books no-padding">
     <div class="row">
         <div class="col-md-12">
             <ol class="breadcrumb">
-                <li><a href="/Books">Books</a></li>
+                <li><a href="/Books">@Resource.Books</a></li>
                 <li class="active">{{book.Title}}</li>
             </ol>
         </div>
@@ -29,27 +30,27 @@
         </div>
         <div class="col-lg-9 col-md-9 col-sm-7 col-xs-12">
             <div class="form-group">
-                <label>Title</label>
+               @Html.LabelFor(m => Model.Title)
                 <label class="form-control"><b>{{book.Title}}</b></label>
             </div>
 
             <div class="form-group">
-                <label>Publisher</label>
+                @Html.LabelFor(m => Model.Publisher)
                 <label class="form-control">{{book.Publisher}}</label>
             </div>
             <div class="form-group">
-                <label>Authors</label>
+                @Html.LabelFor(m => Model.Authors)
                 <div>
                     <span class="btn btn-white btn-round" ng-repeat="author in book.Authors"><b>{{author.Name}}</b></span>
                 </div>
             </div>
             <div class="form-group" ng-class="{'display-none':!book.PagesNumber}">
-                <label>PagesNumber</label>
+                @Html.LabelFor(m => Model.PagesNumber)
                 <label class="form-control">{{book.PagesNumber}}</label>
             </div>
 
             <div class="form-group" ng-class="{'display-none':!book.Description}">
-                <label>Description</label>
+                <label>@Html.LabelFor(m => Model.Descriptions)</label>
                 <label class="form-control">{{book.Description}}</label>
             </div>
         </div>
