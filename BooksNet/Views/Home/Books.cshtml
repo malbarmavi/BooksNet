@@ -1,7 +1,7 @@
 ﻿@model BooksNet.Areas.Admin.ViewModels.Book.NewBookViewModel
 
 <div class="row books no-padding">
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-4 col-xs-12">
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <h3>@Resource.FilterBy :</h3>
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9 ">
+    <div class="col-md-9 col-sm-8 col-xs-12">
         <div>
             <h3>We have found {{booksResult.length}} {{booksResult.length > 1 ? 'items' : 'item'}}.</h3>
         </div>
