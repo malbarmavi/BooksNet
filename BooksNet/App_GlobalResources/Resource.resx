@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value />
   </data>
+  <data name="Adults" xml:space="preserve">
+    <value>Adults</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>Age</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Kids" xml:space="preserve">
+    <value>Kids</value>
   </data>
   <data name="LatestUpload" xml:space="preserve">
     <value>Latest Upload</value>

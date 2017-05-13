@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>من نحن</value>
   </data>
+  <data name="Adults" xml:space="preserve">
+    <value>البالغين</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>الفئة</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Kids" xml:space="preserve">
+    <value>الأطفال</value>
   </data>
   <data name="LatestUpload" xml:space="preserve">
     <value>احدث الكتب المضافة</value>

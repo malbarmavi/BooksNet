@@ -106,6 +106,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adults.
+        /// </summary>
+        public static string Adults {
+            get {
+                return ResourceManager.GetString("Adults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age.
         /// </summary>
         public static string Age {
@@ -210,6 +219,15 @@ namespace GlobalResources {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kids.
+        /// </summary>
+        public static string Kids {
+            get {
+                return ResourceManager.GetString("Kids", resourceCulture);
             }
         }
         
