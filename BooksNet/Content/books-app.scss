@@ -287,6 +287,22 @@ body[dir=rtl] {
     }
 }
 
+@media only screen and (max-width : 768px ) {
+    .navbar-collapse {
+        clear: both;
+    }
+
+    .navbar-nav {
+        display: block;
+        clear: both;
+
+        li {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
 div[dir=rtl] {
     text-align: right;
 
