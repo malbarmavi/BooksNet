@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group ">
                     @Html.LabelFor(model => model.Category, new { @class = "control-label" })
-                    @Html.DropDownListFor(model => model.CategoryId, Model.Category, "Unselected...", new { @class = "form-control selectpicker dropdown-header", ng_model = "category" })
+                    @Html.DropDownListFor(model => model.CategoryId, Model.Category, Resource.Unselected, new { @class = "form-control selectpicker dropdown-header", ng_model = "category" })
                 </div>
                 <div class="form-group ">
                     @Html.LabelFor(model => model.Categories, new { @class = "control-label" })
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Publisher, new { @class = "control-label" })
-                    @Html.DropDownListFor(model => model.PublisherId, Model.Publisher, "Unselected...", new { @class = "form-control selectpicker dropdown-header", ng_model = "publisher" })
+                    @Html.DropDownListFor(model => model.PublisherId, Model.Publisher, Resource.Unselected, new { @class = "form-control selectpicker dropdown-header", ng_model = "publisher" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Authors, new { @class = "control-label" })
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-info btn-block" ng-click="search()">Search</button>
+                    <button class="btn btn-info btn-block" ng-click="search()">@Resource.Search</button>
                 </div>
             </div>
         </div>

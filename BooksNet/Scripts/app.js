@@ -2,7 +2,7 @@
     'use strict';
 
     function init() {
-        $('select').chosen({ width: '100%', disable_search_threshold: 10, no_results_text: "...." });
+        $('select').chosen({ width: '100%', disable_search_threshold: 10, no_results_text: "....", placeholder_text:"...." });
         $('.chosen-books').click(function () {
             $("select").trigger("chosen:updated");
         });

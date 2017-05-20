@@ -286,6 +286,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {
@@ -300,6 +309,15 @@ namespace GlobalResources {
         public static string TopViews {
             get {
                 return ResourceManager.GetString("TopViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unselected....
+        /// </summary>
+        public static string Unselected {
+            get {
+                return ResourceManager.GetString("Unselected", resourceCulture);
             }
         }
     }

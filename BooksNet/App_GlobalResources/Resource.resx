@@ -180,11 +180,17 @@
   <data name="Publisher" xml:space="preserve">
     <value>Publisher</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
   </data>
   <data name="TopViews" xml:space="preserve">
     <value>Top Views</value>
+  </data>
+  <data name="Unselected" xml:space="preserve">
+    <value>Unselected...</value>
   </data>
   <data name="_dir" xml:space="preserve">
     <value>ltr</value>
