@@ -34,7 +34,7 @@ namespace BooksNet.Controllers
       NewBookViewModel model = new NewBookViewModel();
       var categories = db.Categories.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
       var publishers = db.Publishers.Select(c => new { Id = c.Id, Name = c.Name }).ToList();
-      var authours = db.Authours.Select(c => new { Id = c.Id, Name = c.FirstName + c.LastName }).ToList();
+      var authours = db.Authours.Select(c => new { Id = c.Id, Name = string.Concat(c.FirstName," ",c.LastName) }).ToList();
 
       model.Category = new SelectList(categories, "Id", "Name");
       model.Categories = new MultiSelectList(categories, "Id", "Name");
