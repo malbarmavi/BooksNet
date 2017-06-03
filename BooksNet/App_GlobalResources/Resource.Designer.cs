@@ -124,7 +124,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AllAges.
+        ///   Looks up a localized string similar to All Ages.
         /// </summary>
         public static string AllAges {
             get {
