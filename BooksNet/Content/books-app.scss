@@ -315,3 +315,135 @@ div[dir=rtl] {
 .height-auto { 
     height:auto;
 }
+
+.contact {
+    padding:4rem;
+}
+
+$index : 1500;
+.spinner-overlay {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index:$index;
+}
+
+/* Spinner */
+
+// spin circle
+$spin-circle-border-color: rgba(3, 169, 244,0.4);
+$spin-circle-border-radius: 50%;
+$spin-border-color: rgb(3, 169, 244);
+$spin-width: 75px;
+$spin-height: $spin-width;
+$spin-border-width: 10px;
+
+.circle-spin {
+    display: inline-block;
+    margin: auto;
+    width: $spin-width+$spin-border-width;
+    height: $spin-height+$spin-border-width;
+
+    .circle {
+        width: $spin-width;
+        height: $spin-height;
+        margin: auto;
+        border: $spin-border-width solid $spin-circle-border-color;
+        border-radius: $spin-circle-border-radius;
+
+        &:after {
+            content: " ";
+            width: $spin-width;
+            height: $spin-height;
+            display: block;
+            border-radius: 50%;
+            border: $spin-border-width solid $spin-border-color;
+            position: relative;
+            top: $spin-border-width * -1;
+            left: $spin-border-width * -1;
+            border-color: $spin-border-color transparent transparent transparent;
+            animation: 0.7s linear infinite circle-spin
+        }
+    }
+
+    .no-border {
+        border-color: transparent;
+
+        &:after {
+        }
+    }
+
+    .ease {
+        &:after {
+            animation: 0.8s ease-in-out infinite circle-spin;
+        }
+    }
+
+    .thin {
+        border-width: $spin-border-width/3;
+
+        &:after {
+            border-width: $spin-border-width/3;
+            top: $spin-border-width/3 * -1;
+            left: $spin-border-width/3 * -1;
+        }
+    }
+
+    .small {
+        top: $spin-width/2;
+        width: $spin-width/2;
+        height: $spin-width/2;
+
+        &:after {
+            width: $spin-width/2;
+            height: $spin-width/2;
+        }
+    }
+}
+
+// spin items layout
+label {
+    color: #fff;
+    font-family: tahoma;
+    font-weight: normal;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    top: -15px;
+    font-size: 9pt;
+    margin: 15px 0 10px 0;
+}
+
+.item {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    //padding:($spin-width+$spin-border-width)/2 ($spin-width+$spin-border-width)/1.5;
+    width: ($spin-width+$spin-border-width)*2;
+    height: ($spin-width+$spin-border-width)*2;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// main animation
+@keyframes circle-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.fixed-center { 
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+label { 
+    text-shadow:none !important;
+}

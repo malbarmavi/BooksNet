@@ -34,11 +34,13 @@
         }
     });
 
-    app.controller('main', ['$scope', function ($scope) {
+    app.controller('main', ['$scope', '$timeout', function ($scope, $timeout) {
         $scope.title = "BooksNet - Home";
         $scope.backgroundSize = false;
         $scope.books = false;
-
+        $timeout(function () {
+            $('.spinner-overlay').fadeOut();
+        }, 1500);
     }]);
 
     app.controller('index', ['$scope', '$http', function ($scope, $http) {
