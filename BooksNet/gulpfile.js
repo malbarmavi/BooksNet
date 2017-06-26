@@ -59,7 +59,7 @@ gulp.task('admin:sass', ['clean'], function () {
 gulp.task('admin:minify',['admin:sass'], function () {
     return gulp.src(config.admin.css.files)
         .pipe(strip())
-        .pipe(cssnano())
+        .pipe(cssnano({ zindex: false }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.admin.css.dest));
 });
@@ -87,7 +87,7 @@ gulp.task('app:sass', function () {
 gulp.task('app:minify', ['app:sass'], function () {
     return gulp.src(config.css.files)
         .pipe(strip())
-        .pipe(cssnano())
+        .pipe(cssnano({ zindex: false }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.css.dest));
 });
