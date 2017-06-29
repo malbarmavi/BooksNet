@@ -39,7 +39,7 @@
         $scope.backgroundSize = false;
         $scope.books = false;
         $timeout(function () {
-            $('.spinner-overlay').fadeOut();
+            $('.loader-overlay').fadeOut();
         }, 1500);
     }]);
 

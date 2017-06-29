@@ -320,15 +320,15 @@ div[dir=rtl] {
     padding:4rem;
 }
 
-$index : 1500;
-.spinner-overlay {
+
+.loader-overlay {
     position: fixed;
     background: #fff;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index:$index;
+    z-index:999999;
 }
 
 /* Spinner */
@@ -344,28 +344,26 @@ $spin-border-width: 10px;
 .circle-spin {
     display: inline-block;
     margin: auto;
-    width: $spin-width+$spin-border-width;
-    height: $spin-height+$spin-border-width;
 
     .circle {
         width: $spin-width;
         height: $spin-height;
         margin: auto;
-        border: $spin-border-width solid $spin-circle-border-color;
+        /*border: $spin-border-width solid $spin-circle-border-color;*/
         border-radius: $spin-circle-border-radius;
+        position:relative;
 
         &:after {
             content: " ";
-            width: $spin-width;
-            height: $spin-height;
+            width: 100%;
+            height: 100%;
             display: block;
             border-radius: 50%;
             border: $spin-border-width solid $spin-border-color;
-            position: relative;
-            top: $spin-border-width * -1;
-            left: $spin-border-width * -1;
+            position: absolute;
             border-color: $spin-border-color transparent transparent transparent;
-            animation: 0.7s linear infinite circle-spin
+            animation: 1s linear infinite circle-spin;
+           
         }
     }
 
@@ -446,4 +444,8 @@ label {
 
 label { 
     text-shadow:none !important;
+}
+
+.bold { 
+    font-weight:bold;
 }
