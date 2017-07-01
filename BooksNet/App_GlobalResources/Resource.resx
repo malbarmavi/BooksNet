@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value />
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
   <data name="Adults" xml:space="preserve">
     <value>Adults</value>
   </data>
@@ -132,7 +135,16 @@
   <data name="Authors" xml:space="preserve">
     <value>Authors</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="BookItem" xml:space="preserve">
+    <value>Book</value>
+  </data>
   <data name="Books" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="BooksItem" xml:space="preserve">
     <value>Books</value>
   </data>
   <data name="Categories" xml:space="preserve">
@@ -144,11 +156,17 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="ContctUs" xml:space="preserve">
+    <value>Contct us</value>
+  </data>
   <data name="CoverImage" xml:space="preserve">
     <value>CoverImage</value>
   </data>
   <data name="Descriptions" xml:space="preserve">
     <value>Descriptions</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
@@ -171,6 +189,9 @@
   <data name="PagesNumber" xml:space="preserve">
     <value>PagesNumber</value>
   </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="Print" xml:space="preserve">
     <value>Print</value>
   </data>
@@ -191,6 +212,9 @@
   </data>
   <data name="Unselected" xml:space="preserve">
     <value>Unselected...</value>
+  </data>
+  <data name="WeHaveFound" xml:space="preserve">
+    <value>We have found</value>
   </data>
   <data name="_dir" xml:space="preserve">
     <value>ltr</value>

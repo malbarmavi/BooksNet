@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-9 col-sm-8 col-xs-12">
         <div>
-            <h3>We have found {{booksResult.length}} {{booksResult.length > 1 ? 'items' : 'item'}}.</h3>
+            <h3>@Resource.WeHaveFound {{booksResult.length}} {{booksResult.length > 1 ? '@Resource.BooksItem' : '@Resource.BookItem'}}</h3>
         </div>
         <div class="books-items">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="b in booksResult">

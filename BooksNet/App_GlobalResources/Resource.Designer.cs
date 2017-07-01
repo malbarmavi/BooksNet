@@ -106,6 +106,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adults.
         /// </summary>
         public static string Adults {
@@ -142,11 +151,38 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string BookItem {
+            get {
+                return ResourceManager.GetString("BookItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Books.
         /// </summary>
         public static string Books {
             get {
                 return ResourceManager.GetString("Books", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Books.
+        /// </summary>
+        public static string BooksItem {
+            get {
+                return ResourceManager.GetString("BooksItem", resourceCulture);
             }
         }
         
@@ -178,6 +214,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contct us.
+        /// </summary>
+        public static string ContctUs {
+            get {
+                return ResourceManager.GetString("ContctUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CoverImage.
         /// </summary>
         public static string CoverImage {
@@ -192,6 +237,15 @@ namespace GlobalResources {
         public static string Descriptions {
             get {
                 return ResourceManager.GetString("Descriptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -259,6 +313,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Phone {
+            get {
+                return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print.
         /// </summary>
         public static string Print {
@@ -318,6 +381,15 @@ namespace GlobalResources {
         public static string Unselected {
             get {
                 return ResourceManager.GetString("Unselected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We have found.
+        /// </summary>
+        public static string WeHaveFound {
+            get {
+                return ResourceManager.GetString("WeHaveFound", resourceCulture);
             }
         }
     }
