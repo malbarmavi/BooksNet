@@ -88,7 +88,7 @@
     <footer>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <p class="developer text-left">&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi
+                    <p class="developer text-left">&copy; @(DateTime.Now.Year != 2017 ? $"2017 - {DateTime.Now.Year}" : @DateTime.Now.Year.ToString()) Muhammad Khair Albarmawi
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <p class="text-right my-links">
